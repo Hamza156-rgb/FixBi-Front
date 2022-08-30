@@ -43,19 +43,19 @@ import { SharedDataService } from '../providers/shared-data/shared-data.service'
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FacebookLoginProvider,GoogleLoginProvider,SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { FacebookLoginProvider, GoogleLoginProvider, SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { TermsConditionComponent } from './pages/terms-condition/terms-condition.component';
 import { SelectDropDownModule } from 'ngx-select-dropdown';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
-import {ScrollingModule} from '@angular/cdk/scrolling';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatListModule} from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 import { SearchFilterPipe } from './search-filter.pipe';
 import { ViewJobProfileComponent } from './pages/provider/view-job-profile/view-job-profile.component';
 import { JobsAssignedComponent } from './pages/provider/jobs-assigned/jobs-assigned.component';
@@ -122,7 +122,7 @@ import { JobsAssignedComponent } from './pages/provider/jobs-assigned/jobs-assig
     MatIconModule,
     MatListModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,AngularFirestoreModule,
+    AngularFireAuthModule, AngularFirestoreModule,
     ScrollToModule.forRoot()
   ],
   providers: [ConfigService, SharedDataService,
@@ -135,7 +135,7 @@ import { JobsAssignedComponent } from './pages/provider/jobs-assigned/jobs-assig
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              '37768551355-quc0prkkvhus2nobk0g6ig2ril1ohkuj.apps.googleusercontent.com'
+              '644544687217-ton9i8jahc3lifucp4u2q7ns7qi2mdi9.apps.googleusercontent.com'
             )
           },
           {
