@@ -1,0 +1,48 @@
+<div class="card">
+    <div class="col pt-4 text-center" id="cardsnamehere">
+        <img [src]="image" class="img-fluid rounded-circle" style="max-height:200px;" alt="...">
+        <p class="card-text text-center pt-2">
+        </p>
+        <h4>
+            {{name}}
+        </h4>
+        <p class="card-text text-center pt-2 pb-3">
+            <small>
+                <a type="submit" class="btn btn-primary" id="Viewprofile" routerLink="/profileUser">View Profile</a>
+            </small>
+        </p>
+    </div>
+    <div class="card-body text-left">
+
+        <small class="card-text pt-2 ">
+            <a routerLink="/insightUser">
+                <span> <img src="assets/img/Insight.png"> Insight </span>
+            </a>
+        </small>
+        <hr>
+        <small class="card-text pt-2 ">
+            <a routerLink="/manageJobsUser">
+                <span><img src="assets/img/JobComplete.png"> Manage Jobs</span>
+
+            </a>
+        </small>
+        <hr>
+        <small class="card-text pt-2 ">
+            <a routerLink="/inboxUser">
+                <span><img src="assets/img/inbox.png"> Inbox </span>
+            </a>
+        </small>
+        <hr>
+        <small class="card-text pt-2 ">
+            <a routerLink="/favouriteUser">
+                <span>
+                    <img src="assets/img/like.png"> Favourite </span>
+            </a>
+        </small>
+        <hr>
+        <a routerLink="/changePasswordUser">
+            <small class="card-text pt-2 "> <span><img src="assets/img/ChangePassword.png"> Change Password </span>
+            </small></a><small class="card-text pt-2 ">
+        </small>
+    </div>
+</div>

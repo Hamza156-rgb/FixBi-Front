@@ -1,0 +1,179 @@
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid container w-75">
+
+        <a class="navbar-brand" routerLink=""> <img src="/assets/img/FixBi-Logo.png" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mt-2 mb-lg-1">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/about">About</a>
+                </li>
+                <div *ngIf="user_type == 2">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/postJobUser" *ngIf="loggedIn">Post a Job</a>
+                    </li>
+                </div>
+
+                <div *ngIf="user_type == 4">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/jobListingUser" *ngIf="loggedIn">Job Listing</a>
+                    </li>
+                </div>
+
+                <div *ngIf="user_type == 3">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/jobListingUser" *ngIf="loggedIn">Job Listing</a>
+                    </li>
+                </div>
+
+            </ul>
+            <div class="d-flex justify-content-around">
+                <div class="row ">
+                    <div class="col-xs-8 col-sm-6 col-md-7 ">
+                        <a id="pdf_link" style="text-decoration:none; color:black" target="_blank"><button
+                                class="btn btn-outline-primary me-md-2" id="pdfdownload2" type="button"><span>
+                                    <img src="/assets/img/pdficon.png" />
+                                    Download Pdf </span>
+                            </button></a>
+                    </div>
+                    <div class="col-xs-8 col-sm-6 col-md-5 ">
+                        <button class="btn btn-success " type="button" data-bs-toggle="modal" id="login"
+                            (click)="openModal()" *ngIf="!loggedIn">Log In/Register</button>
+
+                        <div ngbDropdown class="d-inline-block mt-2" style="width:10%;">
+
+                            <button type="button" class="btn " id="dropdownBasic1" ngbDropdownToggle
+                                *ngIf="loggedIn"><a>
+                                    <img src="/assets/img/userblack.png" /> {{first_name}}
+                                </a></button>
+
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <div *ngIf="user_type == 3 "><button ngbDropdownItem><a class="dropdown-item"
+                                            routerLink="/profileProvider"> <img src="/assets/img/ProfileSmall.png" />
+                                            Profile</a></button></div>
+                                <div *ngIf="user_type == 4"><button ngbDropdownItem><a class="dropdown-item"
+                                            routerLink="/profileProvider"> <img src="/assets/img/ProfileSmall.png" />
+                                            Profile</a></button></div>
+                                <div *ngIf="user_type == 2"><button ngbDropdownItem><a class="dropdown-item"
+                                            routerLink="/profileUser"> <img src="/assets/img/ProfileSmall.png" />
+                                            Profile</a></button></div>
+
+
+
+
+                                <div *ngIf="user_type == 3 ">
+                                    <button ngbDropdownItem><a class="dropdown-item"
+                                            routerLink="/jobsCompletedProvider"> <img
+                                                src="/assets/img/ManageJobs.png" /> Manage Jobs</a></button>
+                                </div>
+
+                                <div *ngIf="user_type == 4 ">
+                                    <button ngbDropdownItem><a class="dropdown-item"
+                                            routerLink="/jobsCompletedProvider"> <img
+                                                src="/assets/img/ManageJobs.png" /> Manage Jobs</a></button>
+                                </div>
+
+
+                                <div *ngIf="user_type == 2 ">
+
+                                    <button ngbDropdownItem><a class="dropdown-item" routerLink="/manageJobsUser"> <img
+                                                src="/assets/img/ManageJobs.png" /> Manage Jobs</a></button>
+                                </div>
+
+
+
+                                <div *ngIf="user_type == 3 ">
+                                    <button ngbDropdownItem><a class="dropdown-item" routerLink="/insightProvider"> <img
+                                                src="/assets/img/Insight.png" /> Insight</a></button>
+                                </div>
+
+                                <div *ngIf="user_type == 4 ">
+                                    <button ngbDropdownItem><a class="dropdown-item" routerLink="/insightProvider"> <img
+                                                src="/assets/img/Insight.png" /> Insight</a></button>
+                                </div>
+
+
+                                <div *ngIf="user_type == 2 ">
+                                    <button ngbDropdownItem><a class="dropdown-item" routerLink="/insightUser"> <img
+                                                src="/assets/img/Insight.png" /> Insight</a></button>
+                                </div>
+
+
+
+
+
+                                <div *ngIf="user_type == 3 ">
+                                    <button ngbDropdownItem><a class="dropdown-item" routerLink="/inboxProvider"> <img
+                                                src="/assets/img/inbox.png" /> Inbox</a></button>
+                                </div>
+
+                                <div *ngIf="user_type == 4 ">
+                                    <button ngbDropdownItem><a class="dropdown-item" routerLink="/inboxProvider"> <img
+                                                src="/assets/img/inbox.png" /> Inbox</a></button>
+                                </div>
+
+
+                                <div *ngIf="user_type == 2 ">
+                                    <button ngbDropdownItem><a class="dropdown-item" routerLink="/inboxUser"> <img
+                                                src="/assets/img/inbox.png" /> Inbox</a></button>
+                                </div>
+
+
+
+                                <!-- 
+                                <div *ngIf="user_type == 3 ">
+                                    <button ngbDropdownItem><a class="dropdown-item" routerLink="/favouriteProvider">
+                                            <img src="/assets/img/Favourite.png" /> Favourite</a></button>
+                                </div>
+
+                                <div *ngIf="user_type == 4 ">
+                                    <button ngbDropdownItem><a class="dropdown-item" routerLink="/favouriteProvider">
+                                            <img src="/assets/img/Favourite.png" /> Favourite</a></button>
+                                </div> -->
+
+
+                                <div *ngIf="user_type == 2 ">
+
+                                    <button ngbDropdownItem><a class="dropdown-item" routerLink="/favouriteUser"> <img
+                                                src="/assets/img/Favourite.png" /> Favourite</a></button>
+                                </div>
+
+
+                                <div *ngIf="user_type == 3 ">
+                                    <button ngbDropdownItem><a class="dropdown-item"
+                                            routerLink="/changePasswordProvider"> <img
+                                                src="/assets/img/ChangePassword.png" /> Change Password</a></button>
+                                </div>
+
+                                <div *ngIf="user_type == 4 ">
+                                    <button ngbDropdownItem><a class="dropdown-item"
+                                            routerLink="/changePasswordProvider"> <img
+                                                src="/assets/img/ChangePassword.png" /> Change Password</a></button>
+                                </div>
+
+
+                                <div *ngIf="user_type == 2 ">
+
+
+                                    <button ngbDropdownItem><a class="dropdown-item" routerLink="/changePasswordUser">
+                                            <img src="/assets/img/ChangePassword.png" /> Change Password</a></button>
+                                </div>
+
+
+
+                                <button ngbDropdownItem *ngIf="loggedIn"><a class="dropdown-item" (click)="onLogout()">
+                                        <img src="/assets/img/logout.png" /> Logout</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

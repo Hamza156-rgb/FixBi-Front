@@ -1,0 +1,63 @@
+
+.wrapper {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+// #artical {
+//     background-image: url(~src/assets/img/labtop.png);
+//     height: auto;
+//     padding: 10% 10%;
+
+//   }
+.card-text{
+  font-size: 20px;
+}
+  #More {
+    color: #0d6efd !important;
+    text-decoration: none;
+  }
+li{
+    list-style: none;
+}
+#imageaaa {
+    margin-right: 10px;
+  }
+  ul {
+    padding-left: 0rem;
+  }
+  .article img{
+    width:150px;
+    height:120px;
+  }
+  @media screen and (max-width:768px) {
+    .article  img{
+     width: 100px;
+     height: 100px;
+    }
+  }
+  @media screen and (max-width:366px) {
+
+    .article img{
+      width: 100px;
+     height: 100px;
+    }
+  }
+  
+  // @media screen and (max-height:812px) {
+  
+  //   img{
+  //       height:100px;
+  //       width: 100px;
+  //   }
+  
+  // }

@@ -1,0 +1,88 @@
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  color: #d3d3d3;
+}
+.full {
+  color: black;
+}
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: black;
+}
+.btn-outline-success:hover {
+
+    background-color: unset !important;
+    border-color: unset !important;
+  }.form-select {
+    border-radius: 10px;
+}
+  #searchpostion {
+
+    margin-top: 0px !important;
+  }
+  .has-search .form-control {
+    padding-left: 2.375rem;
+  }
+  
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+  
+  }
+  #searchSearchpage {
+
+    width: calc(100% - 10px);
+  }
+  #containersearchpage {
+
+    border: 1px solid #707070;
+    border-radius: 10px;
+  }
+
+  // #scroll7 {
+
+  //   height: 52rem;
+  //   overflow-y: scroll;
+  // }
+
+#pdfoutline {
+    color: #2367BC !important
+  }
+
+li{
+    list-style: none;
+}
+#butcommonpageuser {
+    padding: 5px;
+    // width: calc(50% - 10px);
+    width:50%
+  }
+  .btn-primary {
+    color: #fff;
+    background-color: #2367bc;
+    border-color: #2367bc;
+}
+.btn-success {
+    color: #fff;
+    background-color: #5db846;
+    border-color: #5db846;
+}
+button#search {
+  padding: 5px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #2367bc;
+  margin-right: 1%;
+  margin-top: 1%;
+}

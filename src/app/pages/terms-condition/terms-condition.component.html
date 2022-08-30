@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+
+<!-- <div id="header">
+    <h1 class="fw-bold text-center text-white">Terms And Conditions</h1>
+</div> -->
+
+<ngb-carousel [showNavigationArrows]="true" [showNavigationIndicators]="false" [pauseOnHover]="true" [wrap]="true"
+  [activeId]="'sliderThree'">
+  <ng-template ngbSlide *ngFor="let data of slider">
+    <div class="wrapper" dots="false">
+      <img src="{{data.image}}" style="width: 100%; " />
+      <h1 class="text-center fw-bold text-white centered">{{data.image_text}}</h1>
+    </div>
+  </ng-template>
+</ngb-carousel>
+<div class="jumbotron pb-5" id="firstpabout">
+    <h4 class="display-8 text-center pt-5">
+        <!-- <p>
+            Lorem Ipsum <br>
+
+        </p> -->
+    </h4>
+    <p class="lead text-center" id="colorp">
+        {{description}}
+    </p>
+
+</div>
+
+<app-footer></app-footer>

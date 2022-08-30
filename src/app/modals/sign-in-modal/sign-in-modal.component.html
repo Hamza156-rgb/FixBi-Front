@@ -1,0 +1,100 @@
+<div class="custom-class" id="contentmodel111">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-8 col-sm-6" id="divid">
+                    <div class="text-center" id="contentmodel222">
+                        <img src="assets/img/FixBi-Logo.png" />
+                    </div>
+                    <div class="mb-3">
+                        <h3 class="text-center fw-bold">Login or Register</h3>
+                    </div>
+                </div>
+                <div class="col-xs-8 col-sm-6">
+                    <form [formGroup]="registerForm" (ngSubmit)="login()">
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col-7 text-end">
+                                    <h3 class="text-right fw-bold">login</h3>
+
+                                </div>
+                                <div class="col text-end">
+                                    <button (click)="closeModal()" type="button" class="btn-close"
+                                        data-bs-dismiss="modal" aria-label="Close"></button>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="email" class="form-control" id="recipient-name"
+                                placeholder="Email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                                [(ngModel)]="formData.email">
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.required">Email is required</div>
+                                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                            </div>
+
+
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" formControlName="password" class="form-control" id="recipient-name"
+                                placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                                [(ngModel)]="formData.password">
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                                <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Remember Me
+                                </label>
+                            </div>
+                            <div class="col text-end">
+
+                                <a class="black" href="#">Forgot Password?</a>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <div class="d-grid gap-2 col-12 mx-auto">
+                                    <button class="btn btn-primary blue" data-bs-target="#exampleModalToggle2"
+                                        data-bs-toggle="modal" data-bs-dismiss="modal">Login</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="mb-3">
+                        <h5 class="text-center fw-bold">Or</h5>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col text-center">
+                            <a class="btn btn-primary btn blue" data-bs-toggle="modal" href="#" role="button"
+                                (click)="loginWithFacebook()"> <span>
+                                    <i class="fa fa-facebook "></i> Register with Facebook </span>
+                            </a>
+                            <a class="btn btn-danger red" data-bs-toggle="modal" href="#" role="button"
+                                id="GoogleRegister" (click)="loginWithGoogle()"> <span>
+                                    <i class="fa fa-google-plus "></i> Register with Google </span>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <h5 class="text-center fw-bold">Don't have an account?</h5>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <a class="btn btn-success green" data-bs-toggle="modal" (click)="openModal()" role="button">
+                            <span>
+                                Sign Up Now
+                            </span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

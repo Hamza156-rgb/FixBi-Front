@@ -1,0 +1,192 @@
+<app-navbar></app-navbar>
+<div class="jumbotron pb-5">
+    <div class="container w-75 pt-5">
+        <div class="row">
+            <div class="col-12 mt-4">
+                <div class="card-img-top mb-3" id="imageicon">
+                    <p class="card-text text-end pt-3 pr-1" *ngIf="isFav">
+                        <button type="button" class="btn btn-secondary btn-circle btn-xl"   (click)="removeFromFav(this.profile.user_id)"><img
+                                src="assets/img/likebut.png" style="width:17px;width:16px"></button>
+                    </p>
+                    <p class="card-text text-end pt-3 pr-1"  *ngIf="!isFav">
+                        <button type="button" class="btn btn-secondary btn-circle btn-xl" (click)="addToFav(this.profile.user_id)"><img
+                                src="assets/img/likeProvider.png" ></button>
+                    </p>
+                    <p class="card-text text-center pt-3"><img [src]="image" class="img-fluid rounded-circle" style="max-height:200px;cursor:pointer" alt="..."></p>
+                    <p class="card-text text-center pb-3"><strong>Service Provider</strong></p>
+                </div>
+                <div class="mb-3">
+                    <div class="card-body text-left">
+                        <div class="row">
+                            <div class="col-xs-8 col-sm-6">
+                                <p class="card-text">
+                                </p>
+
+                                <div *ngIf="user_type == 3">
+                                    <div class="row">
+                                        <div class="col-xs-8 col-sm-6">
+                                            First Name:
+                                        </div>
+                                        <div class="col-xs-8 col-sm-6">
+                                            <strong>{{first_name}}</strong>
+                                        </div>
+                                    </div>
+
+                                    <p class="card-text">
+                                    </p>
+
+                                    <div class="row">
+                                        <div class="col-xs-8 col-sm-6">
+                                            Last Name:
+                                        </div>
+                                        <div class="col-xs-8 col-sm-6">
+                                            <strong> {{last_name}} </strong>
+                                        </div>
+                                    </div>
+
+                                    <p class="card-text">
+                                    </p>
+                                </div>
+
+
+
+
+                                <div class="row" *ngIf="user_type == 4">
+                                    <div class="col-xs-8 col-sm-6">
+                                        Company Name
+                                    </div>
+                                    <div class="col-xs-8 col-sm-6">
+                                        <strong> {{company_name}} </strong>
+                                    </div>
+                                </div>
+
+                                <p class="card-text">
+                                </p>
+                                <div class="row">
+                                    <div class="col-xs-8 col-sm-6">
+                                        Phone:
+                                    </div>
+                                    <div class="col-xs-8 col-sm-6">
+                                        <strong> {{phone}} </strong>
+                                    </div>
+                                </div>
+                                <p class="card-text">
+                                </p>
+
+
+                                <div class="row">
+                                    <div class="col-xs-8 col-sm-6">
+                                        Email:
+                                    </div>
+                                    <div class="col-xs-8 col-sm-6">
+                                        <strong> {{email}} </strong>
+                                    </div>
+                                </div>
+                                <p></p>
+                                <p class="card-text">
+                                </p>
+                                <div class="row">
+                                    <div class="col-xs-8 col-sm-6">
+                                        Category:
+                                    </div>
+                                    <div class="col-xs-8 col-sm-6">
+                                        <strong *ngFor="let cat of category"> {{cat.name}} </strong>
+                                    </div>
+                                </div>
+                                <p class="card-text">
+                                </p>
+                                <div class="row">
+                                    <div class="col-xs-8 col-sm-6">
+                                        Sub Category:
+                                    </div>
+                                    <div class="col-xs-8 col-sm-6">
+                                        <strong *ngFor="let subcat of sub_category; index as i"> {{subcat.name}}  <b *ngIf="sub_category.length != i + 1">|</b> </strong>
+                                    </div>
+                                </div>
+                                <p class="card-text">
+                                </p>
+                                <div class="row">
+                                    <div class="col-xs-8 col-sm-6">
+                                        Avaiability Time: 
+                                    </div>
+                                    <div class="col-xs-8 col-sm-6">
+                                        <strong> {{openingTime}} - {{closingTime}} </strong>
+                                    </div>
+                                    <div class="col-xs-8 col-sm-6">
+                                        <strong> {{date}} </strong>
+                                    </div>
+                                </div>
+                                <p class="card-text">
+                                </p>
+                                <div class="row">
+                                    <div class="col-xs-8 col-sm-6">
+                                        Country
+                                    </div>
+                                    <div class="col-xs-8 col-sm-6">
+                                        <strong *ngFor="let count of country"> {{count.name}} </strong>
+                                    </div>
+                                </div>
+                                <p class="card-text">
+                                </p>
+                                <div class="row">
+                                    <div class="col-xs-8 col-sm-6">
+                                        City:
+                                    </div>
+                                    <div class="col-xs-8 col-sm-6">
+                                        <strong *ngFor="let c of city;index as i"> {{c.name}} <b *ngIf="city.length != i + 1">|</b> </strong>
+                                    </div>
+                                </div>
+                                <p class="card-text">
+                                </p>
+                                <div class="row">
+                                    <div class="col-xs-8 col-sm-6">
+                                        Region:
+                                    </div>
+                                    <div class="col-xs-8 col-sm-6">
+                                        <strong *ngFor="let r of region;index as i"> {{r.name}} <b *ngIf="region.length != i + 1">|</b></strong>
+                                    </div>
+                                </div>
+                                <p class="card-text">
+                                </p>
+                                <div class="row">
+                                    <div class="col-xs-8 col-sm-6" [ngStyle]="{'display': (showbtn) ? 'none' : 'block'}">
+                                        Portfolio:
+                                    </div>
+                                    <div class="col-xs-8 col-sm-6">
+                                        <strong [ngStyle]="{'display': (showbtn) ? 'none' : 'block'}"> <a id="pdf_link" class="btn btn-outline-success" target="_blank">
+                                            <img src="assets/img/pdf.png"> Portfolio.pdf</a>
+                                    </strong>
+                                    </div>
+                                </div>
+                                <p class="card-text">
+                                </p>
+                                <div class="row">
+                                    <div class="col-xs-8 col-sm-6">
+                                        Description:
+                                    </div>
+                                    <div class="col-xs-8 col-sm-6">
+                                        <p>
+                                            <strong>
+                                                {{description}}
+                                            </strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 col-sm-12">
+                                <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()"
+                                placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off"
+                                spellcheck="off" type="text" #search style="display:none">
+                                <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+                                    <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true">
+                                    </agm-marker>
+                                </agm-map>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

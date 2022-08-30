@@ -1,0 +1,158 @@
+<app-navbar></app-navbar>
+<div class="jumbotron pb-5">
+    <div class="container w-75 pt-5 pb-5">
+    </div>
+    <div class="container w-75 pt-5 pb-5" id="containersearchpage">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="row pt-5">
+                <div class="col-xs-8 pt-2 col-sm-3">
+                    <div class="main">
+                        <div class="form-group has-search">
+                            <span class="fa fa-search form-control-feedback"></span>
+                            <input type="text" formControlName="keyword" [(ngModel)]="searchBox.keyword"
+                                class="form-control" placeholder="Keywords">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-8 pt-2 col-sm-3">
+                    <ngx-select-dropdown [instanceId]="'instance3'" (change)="searchCountry($event)" [multiple]="false"
+                        formControlName="country" [(ngModel)]="searchBox.country" [config]="config3"
+                        [options]="countries">
+                    </ngx-select-dropdown>
+                </div>
+                <div class="col-xs-8 pt-2 col-sm-3">
+                    <ngx-select-dropdown [instanceId]="'instance4'" (change)="searchcity($event)" [multiple]="true"
+                        formControlName="city" [(ngModel)]="searchBox.city" [config]="config4" [options]="city">
+                    </ngx-select-dropdown>
+                </div>
+                <div class="col-xs-8 pt-2 col-sm-3">
+                    <ngx-select-dropdown [instanceId]="'instance5'" [multiple]="true" formControlName="region"
+                        [(ngModel)]="searchBox.region" [config]="config5" [options]="region">
+                    </ngx-select-dropdown>
+                </div>
+            </div>
+            <div class="row pt-4 ">
+                <div class="col-xs-8 pt-2 col-sm-6 ">
+                    <ngx-select-dropdown [instanceId]="'instance1'" (change)="searchChange($event)" [multiple]="false"
+                        formControlName="title" [(ngModel)]="searchBox.category" [config]="config1"
+                        [options]="categories">
+                    </ngx-select-dropdown>
+
+                </div>
+                <div class="col-xs-8 pt-2 col-sm-6  ">
+                    <ngx-select-dropdown [instanceId]="'instance2'" (change)="searchChange1($event)" [multiple]="true"
+                        formControlName="subtitle" [(ngModel)]="searchBox.sub_category" [config]="config2"
+                        [options]="sub_categories"></ngx-select-dropdown>
+
+
+                </div>
+            </div>
+            <div class="row mt-2 center-block text-center">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+                    <button class="btn btn-primary btn-lg" type="submit" id="search">Search</button>
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container w-75 justify-content-center pt-2">
+        <div class="row pt-5" *ngIf="random == 0">
+            <div class="col-xs-8 col-sm-12 mt-2 text-center ">
+                <h5>No Results Found.Search service providers as per your requirements.</h5>.
+            </div>
+        </div>
+    </div>
+    <div class="container w-75 justify-content-center pt-2">
+        <div class="row pt-5" id="scroll7" *ngIf="searchResult.length > 0">
+            <div class="col-xs-8 col-sm-12 mt-2">
+                <ul>
+                    <li *ngFor="let result of searchResult" id="liborderleft">
+                        <div class="row">
+                            <div class="col-xs-8 col-sm-6 mt-2">
+                                <div class=" mb-3" id="mb-3width">
+                                    <div class="row g-0">
+                                        <div class="col-md-4" (click)="viewProfile(result)">
+                                            <img style="width:100px; height:100px;" *ngIf="result.profile_picture"
+                                                [src]="config.imgUrl + result.profile_picture"
+                                                class="img-fluid rounded-start" alt="...">
+                                            <img style="width:100px; height:100px;" *ngIf="!result.profile_picture"
+                                                src="assets/img/download.png" class="img-fluid rounded-start" alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title" *ngIf="result.company_name">
+                                                    {{result.company_name}}</h5>
+                                                <h5 class="card-title" *ngIf="result.first_name">{{result.first_name}}
+                                                    {{result.last_name}}</h5>
+                                                <strong *ngFor="let cat of result.category; index as i">{{cat.name}} <b
+                                                        *ngIf="result.category.length != i + 1">|</b></strong><br />
+                                                <strong
+                                                    *ngFor="let sub_cat of result.sub_category; index as a">{{sub_cat.name}}
+                                                    <b *ngIf="result.sub_category.length != a + 1">| </b></strong>
+                                                <p class="card-text">{{result.email}}</p>
+                                                <p class="card-text">{{result.phone}}</p>
+                                                <p class="card-text">
+                                                <div class="small-ratings">
+                                                    <ng-template #t let-fill="fill">
+                                                        <span class="star" [class.full]="fill === 100">
+                                                            <span class="half"
+                                                                [style.width.%]="fill">&#9733;</span>&#9733;
+                                                        </span>
+                                                    </ng-template>
+
+                                                    <ngb-rating [(rate)]="result.reviews_rating" [starTemplate]="t"
+                                                        [readonly]="true" [max]="5"></ngb-rating>
+                                                </div>
+                                                <!-- <p class="card-text" *ngIf="result.last_review.length > 0"> {{result.last_review[0].reviews_text}}
+                                                </p> -->
+                                                <p class="card-text" *ngIf="result.portfolio">
+                                                    <a [href]="config.imgUrl + result.portfolio" id="pdf_link"
+                                                        class="btn btn-outline-success" target="_blank">
+                                                        <img src="assets/img/pdf.png"> Portfolio.pdf</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 mt-6 align-self-center">
+                                <ul id="menu-logged-out-1" class="menu" style="padding: 0 !important;">
+                                    <li
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1420 text-left">
+                                        <button class="btn btn-primary" id="butcommonpageuser" type="button">
+                                            <img src="assets/img/phone-call.png" /> Make a call
+                                        </button>
+                                    </li>
+                                    <li
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1420 pt-1 text-left">
+
+                                        <button class="btn btn-success mt-1" id="butcommonpageuser" type="button"> <img
+                                                src="assets/img/whatsapp.png" /> Message </button>
+
+                                    </li>
+                                    <li class="mt-5 text-left" *ngIf="result.opening_time && result.closing_time">
+                                        {{result.opening_time}} - {{result.closing_time}}
+
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <h1 class="display-6 text-center pt-5 fw-bold">Or Describe your work</h1>
+    <div class="container w-50 pt-3">
+        <textarea class="form-control" placeholder="Description" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <div class="pt-3">
+            <button type="button" class="btn btn-success btn-lg btn-block form-control">Get Offer</button>
+
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

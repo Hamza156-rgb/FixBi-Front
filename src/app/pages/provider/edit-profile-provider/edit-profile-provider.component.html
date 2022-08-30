@@ -1,0 +1,152 @@
+<app-navbar></app-navbar>
+<div class="jumbotron pb-5">
+    <div class="container w-75 pt-5">
+        <div class="row">
+            <div class="col-12 mt-4">
+                <div class="card-img-top mb-3" id="imageicon">
+                    <p class="card-text text-center pt-3"><img [src]="image" class="img-fluid rounded-circle" style="max-height:200px;cursor:pointer" alt="..." (click)="openPP()"></p>
+                    <p class="card-text text-center pb-3"><strong>Click On Image Above To Change Profile Picture</strong></p>
+                    <input type="file" id="pp" accept="image/png, image/gif, image/jpeg" (change)="changeProfilePic($event)" value="file" style="display: none;"/>
+                </div>
+                <div class="mb-3">
+                    <div class="card-body text-left">
+
+
+                        <div class="row pt-3">
+                            <div *ngIf="user_type == 4 ">
+                                <div class="col-12  mt-2 ">
+                                    <input type="text" class="form-control" id="recipient-name"
+                                        [(ngModel)]="formData.company_name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-3" *ngIf="user_type == 3 ">
+                                <div class="col-md-6 col-12 mt-2 ">
+                                    <input type="text" class="form-control" placeholder="First Name"
+                                        [(ngModel)]="formData.first_name">
+                                </div>
+                                <div class="col-md-6 col-12 mt-2 ">
+                                    <input type="text" class="form-control" id="recipient-name"
+                                        [(ngModel)]="formData.last_name">
+                                </div>
+                        </div>
+                            <div class="row pt-3">
+                                <div class="col-xs-8 col-sm-6 mt-2 ">
+                                    <input type="number" class="form-control" id="recipient-name"
+                                        [(ngModel)]="formData.phone">
+                                </div>
+
+                                <div class="col-xs-8 col-sm-6 mt-2">
+                                    <input type="text" class="form-control" id="recipient-name"
+                                        [(ngModel)]="formData.email">
+                                </div>
+                            </div>
+                            <div class="row pt-3">
+                                <div class="col-xs-8 col-sm-6 mt-2 ">
+                                    <ngx-select-dropdown [instanceId]="'instance1'"
+                                    (change)="searchChange($event)" [multiple]="false"
+                                     [(ngModel)]="formData.category"
+                                    [config]="config1" [options]="categories"
+                                    >
+                                </ngx-select-dropdown>
+                                </div>
+                                <div class="col-xs-8 pt-2 col-sm-6  ">
+                                    <ngx-select-dropdown [instanceId]="'instance2'"
+                                    (change)="searchChange1($event)" [multiple]="true"
+                                   
+                                    [(ngModel)]="formData.sub_category" [config]="config2"
+                                    [options]="sub_categories"></ngx-select-dropdown>
+                                </div>
+                            </div>
+
+                            <div class="row pt-3">
+
+                                <div class="col-xs-8 col-sm-6 mt-2 ">
+                                    <ngx-select-dropdown [instanceId]="'instance3'"
+                                    (change)="searchCountry($event)" [multiple]="false"
+                                     [(ngModel)]="formData.country"
+                                    [config]="config3" [options]="countries"
+                                   >
+                                </ngx-select-dropdown>
+                                </div>
+
+
+                                <div class="col-xs-8 col-sm-6 mt-2 ">
+                                    <ngx-select-dropdown [instanceId]="'instance4'"
+                                    (change)="searchcity($event)" [multiple]="true"
+                                   [(ngModel)]="formData.city"
+                                    [config]="config4" [options]="city">
+                                </ngx-select-dropdown>
+                                </div>
+
+                            </div>
+                            <div class="row pt-3">
+                                <div class="col-xs-8 col-sm-6 mt-2 ">
+                                    <ngx-select-dropdown [instanceId]="'instance5'"
+                                    [multiple]="true"
+                                    [(ngModel)]="formData.region" [config]="config5"
+                                    [options]="region">
+                                </ngx-select-dropdown>
+                                </div>
+                                <div class="col-xs-8 col-sm-6 mt-2">
+                                    <label for="files" class="btn">Add Portfolio</label>
+                                    <input type="file" id="files" accept="application/pdf" value="file" (change)="addPdf($event)" />
+                                    <strong [ngStyle]="{'display': (showbtn) ? 'none' : 'block'}"> <a id="pdf_link" class="btn btn-outline-success" target="_blank">
+                                        <img src="assets/img/pdf.png"> Portfolio.pdf</a>
+                                </strong>
+                                    
+                                </div>
+                            </div>
+                            <div class="row pt-3">
+                                <div class="col-xs-8 col-sm-12 mt-2 ">
+                                    <textarea class="form-control" placeholder="Describe Your Skills"
+                                        id="exampleFormControlTextarea1" rows="3"
+                                        [(ngModel)]="formData.description"></textarea>
+                                </div>
+                            </div>
+                            <div class="row pt-3">
+                                <div class="col-xs-8 col-sm-6 mt-2 ">
+                                    <label>Opening Time</label>
+                                    <input type="time" class="form-control" id="recipient-name"
+                                        placeholder="Start time" [(ngModel)]="formData.openingTime">
+
+                                </div>
+                                <div class="col-xs-8 col-sm-6 mt-2 ">
+                                    <label>Closing Time</label>
+                                    <input type="time" class="form-control" id="recipient-name" placeholder="End time" [(ngModel)]="formData.closingTime">
+
+                                </div>
+                            </div>
+                            <div class="row pt-3">
+                                <div class="form-group mb-3">
+                                    <label>Enter address</label>
+                                    <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()"
+                                        placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off"
+                                        spellcheck="off" type="text" #search>
+                                </div>
+                                <agm-map 
+                                [latitude]="latitude" 
+                                [longitude]="longitude" 
+                                [zoom]="zoom" >
+                                  <agm-marker 
+                                  [latitude]="latitude" 
+                                  [longitude]="longitude"  [markerDraggable]="true"
+                                  (dragEnd)="markerDragEnd($event)"></agm-marker>
+                                </agm-map>
+                                <!-- <h5>Address: {{address}}</h5>
+                                <div>Latitude: {{latitude}}</div>
+                                <div>Longitude: {{longitude}}</div> -->
+                            </div>
+                            <div class="row pt-5">
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary" (click)="updateUser(id)">Save
+                                        Changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>

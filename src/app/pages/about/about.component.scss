@@ -1,0 +1,86 @@
+#header {
+    background-image: url(~/src/assets/img/banner.png);
+    height: auto;
+    padding: 20% 20%;
+    background-position: center;
+}
+
+#firstpabout {
+
+    background-color: rgb(247, 247, 247);
+}
+
+#Introducingcontainer {
+    background-color: #5DB846;
+
+    padding-bottom: 6%;
+}
+
+#pharandfont {
+
+    color: white;
+    font-size: 22px;
+}
+
+
+#customersign {
+    background-color: #5DB846;
+    border: none;
+    width: calc(64% - 10px);
+}
+
+#professionalsign {
+    width: calc(64% - 10px);
+    background-color: #2367bc;
+}
+
+li {
+    list-style: none;
+}
+
+#colpart {
+    text-align: center;
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    padding: 2%
+}
+
+#partners {
+    width: 70% !important;
+}
+
+.tg-background {
+    background: url(~/src/assets/img/BackgroundAbout.png);
+    height: auto;
+    padding: 17% 11%;
+    background-position: center;
+    border-radius: 10px;
+}
+
+
+@media screen and (max-width:768px) {
+    iframe {
+        width: "70%";
+        height: "200%"
+    }
+
+    #imagetestp {
+        padding-top: 40% !important;
+    }
+
+    #pharandfont {
+        text-align: left;
+    }
+
+    #colorp {
+        text-align: left;
+    }
+    #header{
+        width:100%;
+    }
+    #professionalsign {
+        width: calc(67% - 10px);
+        background-color: #2367bc;
+    }
+   
+}

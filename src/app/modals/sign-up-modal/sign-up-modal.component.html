@@ -1,0 +1,556 @@
+<div class="modal-content">
+
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-xs-8 col-sm-6" id="divid">
+                <div class="text-center" id="textcentermodel">
+                    <img src="assets/img/FixBi-Logo.png" />
+
+                </div>
+                <div class="mb-3">
+                    <h3 class="text-center fw-bold">Register</h3>
+
+                </div>
+            </div>
+            <div class="col-xs-8 col-sm-6">
+                <div class="row">
+                    <div class="col-xs-8 col text-end">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                            (click)="closeModal()"></button>
+                    </div>
+                </div>
+                <button class="hidediv btn btn-primary btn-lg me-md-2" id="hidediv" type="button"
+                    (click)="showUserDiv()" id="hidediv"> <span>
+                        <img src="assets/img/usericon.png"> Regular Single User </span>
+                </button>
+                <button class="showdiv btn  btn-lg me-md-2  " type="button" id="CompanyPro" (click)="showDiv()"
+                    id="showdiv"> <span>
+                        <img src="assets/img/briefcase.png"> Company / Professional </span>
+                </button>
+                <div class="mb-3 mt-4">
+                    <div *ngIf="showUserForm" class="divdemo2 row">
+                        <div class="col">
+                            <div>
+                                <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <input type="text" class="form-control" placeholder="First Name*"
+                                                formControlName="firstName"
+                                                [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+                                                [(ngModel)]="formData.first_name">
+                                            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                                                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="text" class="form-control" placeholder="Last Name*"
+                                                [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+                                                formControlName="lastName" [(ngModel)]="formData.last_name">
+                                            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                                                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="email" class="form-control" formControlName="email"
+                                                placeholder="Email*"
+                                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                                                [(ngModel)]="formData.email">
+                                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                                <div *ngIf="f.email.errors.required">Email is required</div>
+                                                <div *ngIf="f.email.errors.email">Email must be a valid email address
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="text" class="form-control" formControlName="phonenumber"
+                                                placeholder="Phone*"
+                                                [ngClass]="{ 'is-invalid': submitted && f.phonenumber.errors }"
+                                                [(ngModel)]="formData.phone">
+                                            <div *ngIf="submitted && f.phonenumber.errors" class="invalid-feedback">
+                                                <div *ngIf="f.phonenumber.errors?.required">Please enter mobile number
+                                                </div>
+                                                <div *ngIf="f.phonenumber.errors?.pattern">Mobile number is not 10 digit
+                                                </div>
+                                                <div *ngIf="f.phonenumber.errors?.minlength">Mobile number cannot be
+                                                    less then 10
+                                                </div>
+                                                <div *ngIf="f.phonenumber.errors?.maxlength">Mobile number cannot be
+                                                    more then 10
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="password" class="form-control" placeholder="Password*"
+                                                [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                                                formControlName="password" [(ngModel)]="formData.password">
+                                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                                <div *ngIf="f.password.errors.required">Password is required</div>
+                                                <div *ngIf="f.password.errors.minlength">Password must be at least 8
+                                                    characters</div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="password" formControlName="confirmPassword"
+                                                class="form-control" placeholder="Confirm Password*"
+                                                [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"
+                                                [(ngModel)]="formData.confirmPassword">
+                                            <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                                                <div *ngIf="f.confirmPassword.errors.required">Confirm Password is
+                                                    required</div>
+                                                <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault" [checked]="terms" (change)="terms = !terms" />
+                                            <label class="form-check-label ml-3" for="flexCheckDefault">
+                                                I have read the <a routerLink="/terms-condition" id="terms"> Terms &
+                                                    Conditions</a> and
+                                                accept
+                                                them
+                                            </label>
+
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="col">
+                                                <div class="d-grid gap-2 col-12 mx-auto">
+                                                    <button class="btn" data-bs-target="#exampleModalToggle2"
+                                                        id="register" data-bs-toggle="modal"
+                                                        data-bs-dismiss="modal">Register Now</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="showCompanyForm" class="divdemo row">
+                        <div class="row mb-3" id="Company">
+                            <div class="col">
+                                <div>
+                                    <div class="card-body">
+                                        <div>
+                                            <div class="row mb-3">
+                                                <div class="col">
+                                                    <a (click)="showCompany()" class="Company" role="button"
+                                                        id="companyBorder">Company</a>
+                                                    <a (click)="showProfessional()" class="Professional" role="button"
+                                                        id="progessionalBorder">Professional</a>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="company">
+                                                <form [formGroup]="companyForm" (ngSubmit)="onSubmits()">
+
+
+                                                    <div class="mb-3">
+
+                                                        <ngx-select-dropdown [instanceId]="'instance1'"
+                                                            (change)="searchChange($event)" [multiple]="false"
+                                                            formControlName="title" [(ngModel)]="formCompany.category"
+                                                            [config]="config1" [options]="categories"
+                                                            [ngClass]="{ 'is-invalid': submitted && e.title.errors }">
+                                                        </ngx-select-dropdown>
+
+                                                        <div *ngIf="submitted && e.title.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="e.title.errors.required">Category is required
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="mb-3">
+                                                        <ngx-select-dropdown [instanceId]="'instance2'"
+                                                            (change)="searchChange1($event)" [multiple]="true"
+                                                            formControlName="subtitle"
+                                                            [(ngModel)]="formCompany.sub_category" [config]="config2"
+                                                            [ngClass]="{ 'is-invalid': submitted && e.subtitle.errors }"
+                                                            [options]="sub_categories"></ngx-select-dropdown>
+
+                                                        <div *ngIf="submitted && e.subtitle.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="e.subtitle.errors.required">Sub Category is
+                                                                required
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Company Name*"
+                                                            [ngClass]="{ 'is-invalid': submitted && e.companyName.errors }"
+                                                            formControlName="companyName"
+                                                            [(ngModel)]="formCompany.company_name " required>
+                                                        <div *ngIf="submitted && e.companyName.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="e.companyName.errors.required">Comapny Name is
+                                                                required</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Tax Number (Optional)"
+                                                            formControlName="tax_number"
+                                                            [(ngModel)]="formCompany.tax_number">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="Jobs*"
+                                                            [ngClass]="{ 'is-invalid': submitted && e.jobs.errors }"
+                                                            formControlName="jobs" [(ngModel)]="formCompany.jobs "
+                                                            required>
+                                                        <div *ngIf="submitted && e.jobs.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="e.jobs.errors.required">Jobs Designation is
+                                                                required</div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="mb-3">
+                                                        <ngx-select-dropdown [instanceId]="'instance3'"
+                                                            (change)="searchCountry($event)" [multiple]="false"
+                                                            formControlName="country" [(ngModel)]="formCompany.country"
+                                                            [config]="config3" [options]="countries"
+                                                            [ngClass]="{ 'is-invalid': submitted && e.country.errors }">
+                                                        </ngx-select-dropdown>
+
+                                                        <div *ngIf="submitted && e.country.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="e.country.errors.required">Country is required
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <ngx-select-dropdown [instanceId]="'instance4'"
+                                                            (change)="searchcity($event)" [multiple]="true"
+                                                            formControlName="city" [(ngModel)]="formCompany.city"
+                                                            [config]="config4" [options]="city"
+                                                            [ngClass]="{ 'is-invalid': submitted && e.city.errors }">
+                                                        </ngx-select-dropdown>
+
+                                                        <div *ngIf="submitted && e.city.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="e.city.errors.required">City is required
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mb-3">
+
+                                                        <ngx-select-dropdown [instanceId]="'instance5'"
+                                                            [multiple]="true" formControlName="region"
+                                                            [(ngModel)]="formCompany.region" [config]="config5"
+                                                            [options]="region"
+                                                            [ngClass]="{ 'is-invalid': submitted && e.region.errors }">
+                                                        </ngx-select-dropdown>
+
+                                                        <div *ngIf="submitted && e.region.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="e.region.errors.required">Region is required
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="Phone*"
+                                                            [ngClass]="{ 'is-invalid': submitted && e.phonenumber.errors }"
+                                                            formControlName="phonenumber"
+                                                            [(ngModel)]="formCompany.phone">
+                                                        <div *ngIf="submitted && e.phonenumber.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="e.phonenumber.errors?.required">Please enter
+                                                                mobile number
+                                                            </div>
+                                                            <div *ngIf="e.phonenumber.errors?.pattern">Mobile number is
+                                                                not 10 digit
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input type="email" class="form-control" placeholder="Email*"
+                                                            formControlName="email"
+                                                            [ngClass]="{ 'is-invalid': submitted && e.email.errors }"
+                                                            [(ngModel)]="formCompany.email">
+                                                        <div *ngIf="submitted && e.email.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="e.email.errors.required">Email is required</div>
+                                                            <div *ngIf="e.email.errors.email">Email must be a valid
+                                                                email address
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input type="password" class="form-control"
+                                                            placeholder="Password*"
+                                                            [ngClass]="{ 'is-invalid': submitted && e.password.errors }"
+                                                            formControlName="password"
+                                                            [(ngModel)]="formCompany.password">
+                                                        <div *ngIf="submitted && e.password.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="e.password.errors.required">Password is required
+                                                            </div>
+                                                            <div *ngIf="e.password.errors.minlength">Password must be at
+                                                                least 8
+                                                                characters</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input type="password" formControlName="confirmPassword"
+                                                            class="form-control" placeholder="Confirm Password*"
+                                                            [ngClass]="{ 'is-invalid': submitted && e.confirmPassword.errors }"
+                                                            [(ngModel)]="formCompany.confirmPassword">
+                                                        <div *ngIf="submitted && e.confirmPassword.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="e.confirmPassword.errors.required">Confirm
+                                                                Password is
+                                                                required</div>
+                                                            <div *ngIf="e.confirmPassword.errors.mustMatch">Passwords
+                                                                must match
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault" [checked]="terms"
+                                                            (change)="terms = !terms">
+                                                        <label class="form-check-label ml-3" for="flexCheckDefault">
+                                                            I have read the <a href="terms-condition" id="terms"> Terms
+                                                                &
+                                                                Conditions</a>
+                                                            and accept
+                                                            them
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="row mb-3">
+                                                        <div class="col">
+                                                            <div class="d-grid gap-2 col-12 mx-auto">
+                                                                <button class="btn btn-primary"
+                                                                    data-bs-target="#exampleModalToggle2"
+                                                                    data-bs-toggle="modal" data-bs-dismiss="modal"
+                                                                    id="register">Register
+                                                                    Now</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <div *ngIf="professional">
+                                                <form [formGroup]="professionalForm" (ngSubmit)="onSubmitss()">
+                                                    <div class="mb-3">
+                                                        <ngx-select-dropdown [instanceId]="'instance6'"
+                                                            (change)="PsearchChange($event)" [multiple]="false"
+                                                            formControlName="title"
+                                                            [(ngModel)]="formProfessional.category" [config]="pconfig1"
+                                                            [options]="pcategories"
+                                                            [ngClass]="{ 'is-invalid': submitted && g.title.errors }">
+                                                        </ngx-select-dropdown>
+
+                                                        <div *ngIf="submitted && g.title.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="g.title.errors.required">Category is required
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <ngx-select-dropdown [instanceId]="'instance7'"
+                                                            (change)="psearchChange1($event)" [multiple]="true"
+                                                            formControlName="subtitle"
+                                                            [(ngModel)]="formProfessional.sub_category"
+                                                            [config]="pconfig2"
+                                                            [ngClass]="{ 'is-invalid': submitted && g.subtitle.errors }"
+                                                            [options]="psub_categories"></ngx-select-dropdown>
+
+                                                        <div *ngIf="submitted && g.subtitle.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="g.subtitle.errors.required">Sub Category is
+                                                                required
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control"
+                                                            placeholder="First Name*" formControlName="firstName"
+                                                            [ngClass]="{ 'is-invalid': submitted && g.firstName.errors }"
+                                                            [(ngModel)]="formProfessional.first_name">
+                                                        <div *ngIf="submitted && g.firstName.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="g.firstName.errors.required">First Name is
+                                                                required</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="Last Name*"
+                                                            [ngClass]="{ 'is-invalid': submitted && g.lastName.errors }"
+                                                            formControlName="lastName"
+                                                            [(ngModel)]="formProfessional.last_name">
+                                                        <div *ngIf="submitted && g.lastName.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="g.lastName.errors.required">Last Name is
+                                                                required</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Tax Number (Optional)"
+                                                            [(ngModel)]="formProfessional.tax_number">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="Jobs*"
+                                                            [ngClass]="{ 'is-invalid': submitted && g.jobs.errors }"
+                                                            formControlName="jobs" [(ngModel)]="formProfessional.jobs">
+                                                        <div *ngIf="submitted && g.jobs.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="g.jobs.errors.required">Jobs Designation is
+                                                                required</div>
+                                                        </div>
+                                                    </div>
+
+                                                  
+
+                                                    <div class="mb-3">
+                                                        <ngx-select-dropdown [instanceId]="'instance8'"
+                                                            (change)="psearchCountry($event)" [multiple]="false"
+                                                            formControlName="country" [(ngModel)]="formProfessional.country"
+                                                            [config]="pconfig3" [options]="pcountries"
+                                                            [ngClass]="{ 'is-invalid': submitted && g.country.errors }">
+                                                        </ngx-select-dropdown>
+
+                                                        <div *ngIf="submitted && g.country.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="g.country.errors.required">Country is required
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <ngx-select-dropdown [instanceId]="'instance9'"
+                                                            (change)="psearchcity($event)" [multiple]="true"
+                                                            formControlName="city" [(ngModel)]="formProfessional.city"
+                                                            [config]="pconfig4" [options]="pcity"
+                                                            [ngClass]="{ 'is-invalid': submitted && g.city.errors }">
+                                                        </ngx-select-dropdown>
+
+                                                        <div *ngIf="submitted && g.city.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="g.city.errors.required">City is required
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <ngx-select-dropdown [instanceId]="'instance10'"
+                                                            [multiple]="true" formControlName="region"
+                                                            [(ngModel)]="formProfessional.region" [config]="pconfig5"
+                                                            [options]="pregion"
+                                                            [ngClass]="{ 'is-invalid': submitted && g.region.errors }">
+                                                        </ngx-select-dropdown>
+                                                        <div *ngIf="submitted && g.region.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="g.region.errors.required">Region is required
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" placeholder="Phone*"
+                                                            [ngClass]="{ 'is-invalid': submitted && g.phonenumber.errors }"
+                                                            formControlName="phonenumber"
+                                                            [(ngModel)]="formProfessional.phone">
+                                                        <div *ngIf="submitted && g.phonenumber.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="g.phonenumber.errors?.required">Please enter
+                                                                mobile number
+                                                            </div>
+                                                            <div *ngIf="g.phonenumber.errors?.pattern">Mobile number is
+                                                                not 10 digit
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input type="email" class="form-control" placeholder="Email*"
+                                                            formControlName="email"
+                                                            [ngClass]="{ 'is-invalid': submitted && g.email.errors }"
+                                                            [(ngModel)]="formProfessional.email">
+                                                        <div *ngIf="submitted && g.email.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="g.email.errors.required">Email is required</div>
+                                                            <div *ngIf="g.email.errors.email">Email must be a valid
+                                                                email address
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input type="password" class="form-control"
+                                                            placeholder="Password*"
+                                                            [ngClass]="{ 'is-invalid': submitted && g.password.errors }"
+                                                            formControlName="password"
+                                                            [(ngModel)]="formProfessional.password">
+                                                        <div *ngIf="submitted && g.password.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="g.password.errors.required">Password is required
+                                                            </div>
+                                                            <div *ngIf="g.password.errors.minlength">Password must be at
+                                                                least 8
+                                                                characters</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input type="password" formControlName="confirmPassword"
+                                                            class="form-control" id="recipient-name"
+                                                            placeholder="Confirm Password*"
+                                                            [ngClass]="{ 'is-invalid': submitted && g.confirmPassword.errors }"
+                                                            [(ngModel)]="formProfessional.confirmPassword">
+                                                        <div *ngIf="submitted && g.confirmPassword.errors"
+                                                            class="invalid-feedback">
+                                                            <div *ngIf="g.confirmPassword.errors.required">Confirm
+                                                                Password is
+                                                                required</div>
+                                                            <div *ngIf="g.confirmPassword.errors.mustMatch">Passwords
+                                                                must match
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault" [checked]="terms"
+                                                            (change)="terms = !terms">
+                                                        <label class="form-check-label ml-3" for="flexCheckDefault">
+                                                            I have read the <a routerLink="/terms-condition" id="terms"> Terms
+                                                                &
+                                                                Conditions</a>
+                                                            and accept
+                                                            them
+                                                        </label>
+                                                    </div>
+                                                    <div class="row mb-3">
+                                                        <div class="col">
+                                                            <div class="d-grid gap-2 col-12 mx-auto">
+                                                                <button class="btn "
+                                                                    data-bs-target="#exampleModalToggle2"
+                                                                    data-bs-toggle="modal" data-bs-dismiss="modal"
+                                                                    id="register">Register
+                                                                    Now</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

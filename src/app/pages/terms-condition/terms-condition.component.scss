@@ -1,0 +1,21 @@
+// #header {
+//     background-image: url(~/src/assets/img/banner.png);
+//     height: auto;
+//     padding: 20% 20%;
+//     background-position: center;
+// }
+
+
+.wrapper {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  

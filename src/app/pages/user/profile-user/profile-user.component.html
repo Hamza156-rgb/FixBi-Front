@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+<div class="jumbotron pb-5">
+    <div class="container w-75 pt-5">
+        <div class="row">
+            <div class="col-12">
+                <h3>
+                    Profile
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="container w-75 pt-5">
+        <div class="row">
+            <div class="col-12 mt-4">
+                <div class="card-img-top mb-3" id="imageicon">
+                    <p class="card-text text-end pt-3 pr-1"><a class="btn btn-primary" routerLink="/editProfileUser">Edit
+                            Profile </a></p>
+                            <p class="card-text text-center pt-3"><img [src]="image" class="img-fluid rounded-circle" style="max-height:200px;" alt="..."></p>
+                    <p class="card-text text-center pb-3"><strong>User Profile</strong></p>
+                </div>
+                <div class="mb-3">
+                    <div class="card-body text-left" >
+                        <div class="row">
+                            <div class="col-xs-8 col-sm-2">
+                                First Name:
+                            </div>
+                            <div class="col-xs-8 col-sm-10">
+                                <strong>{{formData.first_name}}</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-8 col-sm-2">
+                                Phone:
+                            </div>
+                            <div class="col-xs-8 col-sm-10">
+                                <strong>  {{formData.phone}} </strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-8 col-sm-2">
+                                Last Name:
+                            </div>
+                            <div class="col-xs-8 col-sm-10">
+                                <strong> {{formData.last_name}}  </strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-8 col-sm-2">
+                                Email:
+                            </div>
+                            <div class="col-xs-8 col-sm-10">
+                                <strong>
+
+                                    {{formData.email}}
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

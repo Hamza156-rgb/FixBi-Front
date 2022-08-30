@@ -1,0 +1,111 @@
+<app-navbar></app-navbar>
+<div class="jumbotron pb-5">
+    <div class="container w-75 pt-5">
+        <form>
+            <div class="row">
+                <div class="col-xs-8 col-sm-12">
+                    <h3>
+                        Job Details
+                    </h3>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container w-75 justify-content-center ">
+        <div class="row pt-3">
+            <div class="col-xs-12 col-sm-4 mt-4">
+                <!-- <app-provider-profile-card></app-provider-profile-card> -->
+                <div class="card">
+                    <div class="row">
+                        <h4  class="card-text text-center pt-2">Customer Details</h4>
+                    </div>
+                    <div class="col pt-4 text-center" id="cardsnamehere">
+                        <img [src]="image" class="img-fluid rounded-circle" style="max-height:200px;" alt="...">
+                        <p class="card-text text-center pt-2">
+                        </p>
+                        <h4>
+                            {{customerData.first_name}} {{customerData.last_name}}
+                        </h4>
+                        <p class="card-text text-center pt-2 pb-3">
+                            <small>
+                                <a type="submit" class="btn btn-primary" id="Viewprofile" (click)="startChat(customerData)">Chat</a>
+                            </small>
+                        </p>
+                    </div>
+                    <div class="card-body text-left">
+                
+                        <small class="card-text pt-2 ">
+                                <span><strong>Email: </strong></span><span>{{customerData.email}}</span>
+                        </small>
+                        <hr>
+                        <small class="card-text pt-2 ">
+                                <span><strong>Phone: </strong></span><span>{{customerData.phone}}</span>
+            
+                        </small>
+                        <!-- <hr>
+                        <small class="card-text pt-2 ">
+                            <a routerLink="/inboxUser">
+                                <span><img src="assets/img/inbox.png"> Inbox </span>
+                            </a>
+                        </small>
+                        <hr>
+                        <small class="card-text pt-2 ">
+                            <a routerLink="/favouriteUser">
+                                <span>
+                                    <img src="assets/img/like.png"> Favourite </span>
+                            </a>
+                        </small>
+                        <hr>
+                        <a routerLink="/changePasswordUser">
+                            <small class="card-text pt-2 "> <span><img src="assets/img/ChangePassword.png"> Change Password </span>
+                            </small></a><small class="card-text pt-2 ">
+                        </small> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-8 col-sm-1"></div>
+            <div class="col-xs-8 col-sm-7 mt-4">
+      
+                    <div class="row pt-3">
+                        <div class="col-xs-12 col-sm-12 mt-2">
+                            <h3>{{formData.job_title}}</h3>
+                            <p><strong>{{formData.category.name}} | {{formData.sub_category?.name}}</strong></p>
+                            <p>{{formData.country.name}} | {{formData.city.name}} | {{formData.region.name}}</p>
+                            <p *ngIf="formData.experience == '0'"><b>Experience Required :</b> Fresh</p>
+                            <p *ngIf="formData.experience == '1'"><b>Experience Required :</b> 1 - year</p>
+                            <p *ngIf="formData.experience == '2'"><b>Experience Required :</b> 2 - years</p>
+                            <p *ngIf="formData.experience == '3'"><b>Experience Required :</b> 3 - years</p>
+                            <p *ngIf="formData.experience == '4'"><b>Experience Required :</b> 4 - years</p>
+                            <p *ngIf="formData.experience == '5'"><b>Experience Required :</b> 5 - years</p>
+                            <p *ngIf="formData.experience == '6'"><b>Experience Required :</b> 6 - years</p>
+                            <p *ngIf="formData.experience == '7'"><b>Experience Required :</b> 7 - years</p>
+                            <p *ngIf="formData.experience == '8'"><b>Experience Required :</b> 8 - years</p>
+                            <p *ngIf="formData.experience == '9'"><b>Experience Required :</b> 9 - years</p>
+                            <p *ngIf="formData.experience == '10'"><b>Experience Required :</b> 10 - years</p>
+                            <p *ngIf="formData.experience == '11'"><b>Experience Required :</b> 10+ years</p>
+                            <!-- Job Type -->
+                            <p *ngIf="formData.job_type == '0'"><b>Job Type :</b> Fix</p>
+                            <p *ngIf="formData.job_type == '1'"><b>Job Type :</b> Freelance</p>
+                            <p *ngIf="formData.job_type == '2'"><b>Job Type :</b> Full Time</p>
+                            <p *ngIf="formData.job_type == '3'"><b>Job Type :</b> Hourly</p>
+                            <p *ngIf="formData.job_type == '4'"><b>Job Type :</b> Internship</p>
+                            <p *ngIf="formData.job_type == '5'"><b>Job Type :</b> Part Time</p>
+                            <p *ngIf="formData.job_type == '6'"><b>Job Type :</b> Temporary</p>
+                            <!-- Qualification -->
+                            <p *ngIf="formData.qualification"><b>Qualification Required :</b> {{formData.qualification}}</p>
+                            <!-- Language -->
+                            <p *ngIf="formData.language == '0'"><b>Language :</b> Turkish</p>
+                            <p *ngIf="formData.language == '1'"><b>Language :</b> Greek</p>
+                            <p *ngIf="formData.language == '2'"><b>Language :</b> English</p>
+                            <p *ngIf="formData.language == '3'"><b>Language :</b> Arabic</p>
+                            <!-- Salary -->
+                            <p *ngIf="formData.salary"><b>Salary :</b> {{formData.salary}}</p>
+                             <!-- Job Details -->
+                             <p *ngIf="formData.salary"><b>Job Requirements :</b><br/> {{formData.requirements}}</p>
+                        </div>
+                    </div>    
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
