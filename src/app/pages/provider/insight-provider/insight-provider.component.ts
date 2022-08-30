@@ -14,8 +14,10 @@ export class InsightProviderComponent implements OnInit {
   phone: any = '';
   user_type: any = '';
   id = localStorage.getItem("user_id");
+  description:any='';
   jobs: any = '';
   review: any = '';
+  rating:any='';
 
 
   constructor(public config: ConfigService) { }
@@ -24,6 +26,7 @@ export class InsightProviderComponent implements OnInit {
     this.getUser(this.id);
     this.getJobsNumber(this.id);
     this.getReviews(this.id);
+    this.getRating(this.id)
   }
 
   getUser(id: any) {
@@ -33,6 +36,7 @@ export class InsightProviderComponent implements OnInit {
       this.last = data.data[0].user_data[0].last_name;
       this.email = data.data[0].user_data[0].email;
       this.phone = data.data[0].user_data[0].phone;
+      this.description = data.data[0].user_data[0].description;
       this.user_type = data.data[0].user_data[0].user_type;
 
 
@@ -60,6 +64,13 @@ export class InsightProviderComponent implements OnInit {
   getReviews(id: any) {
     this.config.getHttp('auth/jobReview/getReviewsProvider?user_id=' + id, { id: id }).then((data: any) => {
       this.review = data.data;
+    })
+  }
+
+  getRating(id: any) {
+    this.config.getHttp('auth/jobReview/getAverageReviewsProvider?user_id=' + id, { id: id }).then((data: any) => {
+      console.log(data);
+      this.rating = data.data;
     })
   }
 

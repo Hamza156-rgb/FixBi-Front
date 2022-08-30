@@ -2,64 +2,59 @@
 <div class="jumbotron pb-5">
     <div class="container w-75 justify-content-center ">
         <div class="row pt-3">
-            <div class="col-xs-8 col-sm-5  mt-4">
+            <div class="col-xs-8 col-sm-4  mt-4">
                 <app-provider-profile-card></app-provider-profile-card>
             </div>
-            <div class="col-xs-8 col-sm-6  mt-4">
-                <div class="mb-3">
-                    <h5> Jobs Completed</h5>
-                </div>
-                <div class="mb-3">
 
-                    <div class="row">
+            <div class="col-xs-8 col-sm-8 mt-4">
+                <ul id="scroll">
+                    <li *ngFor="let job of searchResult ">
+                        <div class="row g-0">
+                            <div class="col-md-3 pt-4">
+                                <img [src]="config.imgUrl + job.categories.category_icon"
+                                    style="width:100px; height:100px" class="img-start" alt="...">
+                            </div>
+                            <div class="col-md-9 align-self-center">
+                                <div class="card-body text-left">
 
-                        <div class="col">
-                            <div class="row g-0">
-                                <ul>
-                                    <li *ngFor="let number of [0,1,2]">
-                                        <div class="row g-0">
-                                            <div class="col-md-4 pt-4">
-                                                <img src="assets/img/laptop.png" style="width:100px; height:100px" class="img-start" alt="...">
-                                            </div>
-                                            <div class="col-md-8 align-self-center">
-                                                <div class="card-body text-left">
-                                                    <p class="card-text">
-                                                        <small>
-                                                            <strong>
-                                                                Why Most Construction Fail
-                                                            </strong>
-                                                        </small>
-                                                    </p>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <small>
-                                                                Lorem Ipsum
-                                                            </small>
-                                                        </div>
-                                                        <div class="col text-end">
-                                                            <small>
-                                                                <button type="submit"
-                                                                    class="btn btn-success">View</button> </small>
-                                                        </div>
-                                                    </div>
-                                                    <p>
-                                                        <small>
-                                                            <strong> Why Most Construction Fail
-                                                            </strong>
-                                                        </small>
-                                                    </p>
 
-                                                    <p></p>
-                                                </div>
-                                            </div>
+                                    <strong>
+                                        {{job.job_title}}
+                                    </strong>
+                                    <br />
+                                    <small><strong>{{job.categories.name}} |
+                                            {{job.sub_categories.name}}</strong></small><br />
+                                    <small>{{job.countries.name}} | {{job.cities.name}} |
+                                        {{job.regions.name}}</small><br />
+                                    <div class="row">
+                                        <div class="col">
+
+                                            <small>
+                                                <strong>Job Description:</strong><br />
+                                                {{job.requirements}}
+                                            </small>
                                         </div>
-                                        <hr>
-                                    </li>
-                                </ul>
+                                        <div class="col-xs-10 col-sm-12 col-md-8  mt-1 text-left"
+                                            *ngIf="job.jobs_status == '1'   ">
+                                            <small>
+                                                <small>
+                                                    <button type="button" class="btn btn-success " id="commonbut"
+                                                        (click)="viewJob(job.id, job.posted_by)">View Job
+                                                    </button> </small>
+
+                                                <!-- <small>
+                                                        <button type="button" class="btn btn-success " id="commonbut"
+                                                            (click)="viewProfile( job.posted_by)" style="margin-left:5px;">View Profile
+                                                        </button> </small> -->
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                        <hr>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

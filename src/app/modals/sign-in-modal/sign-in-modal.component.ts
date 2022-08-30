@@ -113,7 +113,7 @@ export class SignInModalComponent implements OnInit {
       console.log(data);
       this.userData = data;
       this.config.postHttp('auth/googleRegistration?userId=' + this.userData.id + '&email=' + this.userData.email + '&familyName=' + this.userData.lastName + '&givenName=' + this.userData.firstName, '').then((data: any) => {
-        // console.log(data);
+        console.log(data);
         localStorage.setItem("first_name", data.user.first_name);
         localStorage.setItem("user_type", data.user.user_type);
         localStorage.setItem("token", data.token);
@@ -122,13 +122,13 @@ export class SignInModalComponent implements OnInit {
         this.closeModal()
         this.authService.sociallogin(data.user.first_name, data.user.password);
         this.shared.toastSuccess('Logged In Successfully')
-        this.router.navigate(['/about']);
+        this.router.navigate(['/']);
         return localStorage.getItem('data');
       })
     })
       .catch(err => {
         this.userData = err;
-        // console.log('err', this.userData)
+        console.log('err', this.userData)
       });
   }
 
@@ -137,21 +137,21 @@ export class SignInModalComponent implements OnInit {
     this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID).then(data => {
       this.userData = data;
       this.config.postHttp('auth/facebookRegistration?userId=' + this.userData.userId + '&email=' + this.userData.email + '&familyName=' + this.userData.lastName + '&givenName=' + this.userData.firstName, '').then((data: any) => {
-        // console.log(data);
+        console.log(data);
         localStorage.setItem("first_name", data.user.first_name);
         localStorage.setItem("user_type", data.user.user_type);
         localStorage.setItem("token", data.token);
         localStorage.setItem("user_id", data.user.user_id);
         this.closeModal()
-        this.authService.login(this.registerForm.value);
+        this.authService.sociallogin(data.user.first_name, data.user.password);
         this.shared.toastSuccess('Logged In Successfully')
-        this.router.navigate(['/about']);
+        this.router.navigate(['/']);
         return localStorage.getItem('data');
       })
     })
       .catch(err => {
         this.userData = err;
-        // console.log('err', this.userData)
+        console.log('err', this.userData)
       });
   }
 

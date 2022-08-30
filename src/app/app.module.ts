@@ -58,6 +58,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import { SearchFilterPipe } from './search-filter.pipe';
 import { ViewJobProfileComponent } from './pages/provider/view-job-profile/view-job-profile.component';
+import { JobsAssignedComponent } from './pages/provider/jobs-assigned/jobs-assigned.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,6 +94,7 @@ import { ViewJobProfileComponent } from './pages/provider/view-job-profile/view-
     TermsConditionComponent,
     SearchFilterPipe,
     ViewJobProfileComponent,
+    JobsAssignedComponent,
 
   ],
   imports: [

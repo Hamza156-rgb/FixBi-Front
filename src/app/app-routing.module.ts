@@ -29,6 +29,8 @@ import { Role } from './_models';
 import { AuthGuard } from './auth.guard';
 import { TermsConditionComponent } from './pages/terms-condition/terms-condition.component';
 import { ViewJobProfileComponent } from './pages/provider/view-job-profile/view-job-profile.component';
+import { JobsAssignedComponent } from './pages/provider/jobs-assigned/jobs-assigned.component'; 
+
 const routes: Routes = [
 
   {
@@ -226,6 +228,15 @@ const routes: Routes = [
   {
     path: 'view-job-profile',
     component: ViewJobProfileComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: 'professional'
+    }
+  },
+
+  {
+    path: 'jobs-assigned',
+    component: JobsAssignedComponent,
     canActivate: [AuthGuard],
     data: {
       role: 'professional'
