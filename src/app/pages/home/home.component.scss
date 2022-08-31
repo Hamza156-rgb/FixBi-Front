@@ -6,7 +6,7 @@
 
 #carouselHeading {
   font-weight: 500;
-  font-size: 70px;
+  font-size: 60px;
   text-transform: capitalize;
 }
 
@@ -401,6 +401,7 @@ textarea{
 #widtprovider {
 
   max-width: 600px;
+  height: 520px;
   border-radius: 10px
 }
 #aligncenter {
@@ -430,6 +431,9 @@ li {
   overflow: hidden;
 }
 
+// .card-title{
+//   font-size: 15px;
+// }
 
 @media screen and (max-width:366px) {
 

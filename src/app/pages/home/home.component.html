@@ -5,7 +5,7 @@
         <div class="wrapper" dots="false">
             <img id="carouselImage" [src]="image.src" alt="Random first slide">
         </div>
-        <div class="carousel-caption  d-lg-block">
+        <div class="carousel-caption  d-lg-block mb-4">
             <h1 id="carouselHeading">{{ image.title }}</h1>
         </div>
     </ng-template>
@@ -239,7 +239,7 @@
                                                 <div class="col-12">
                                                     <p class="card-text">
 
-                                                        <small><b>Email :</b> {{image.email}}</small><br>
+                                                        <small ><b>Email :</b> {{image.email}}</small><br>
                                                         <small><b>Member Since :</b> {{image.created_at}}
                                                         </small>
                                                     </p>
@@ -327,120 +327,7 @@
 
         </ng-template>
     </ngb-carousel>
-    <!--  
-        <section class="testimonials">
-            <div class="wrapper">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div id="testimonials-list" class="owl-carousel">
-                            <div class="row">
-                                <div class="item">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="row g-0">
-                                                <div class="col pt-4">
-                                                    <img class="img-fluid img-thumbnail" src="assets/img/Mask2.png"
-                                                        class="img-start" alt="...">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="card-body text-left">
-                                                    <p class="card-text text-center">
-                                                        <small>
-                                                            <strong>
-                                                                Edith Bowman </strong>
-                                                        </small>
-                                                        <br> <small>
-                                                            Managing Director
-                                                        </small>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="row g-0">
-                                                <div class="col pt-4">
-                                                    <img class="img-fluid img-thumbnail" src="assets/img/Mask2.png"
-                                                        class="img-start" alt="...">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="card-body text-left">
-                                                    <p class="card-text text-center">
-                                                        <small>
-                                                            <strong>
-                                                                Edith Bowman </strong>
-                                                        </small>
-                                                        <br> <small>
-                                                            Managing Director
-                                                        </small>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="row g-0">
-                                                <div class="col pt-4">
-                                                    <img class="img-fluid img-thumbnail" src="assets/img/Mask2.png"
-                                                        class="img-start" alt="...">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="card-body text-left">
-                                                    <p class="card-text text-center">
-                                                        <small>
-                                                            <strong>
-                                                                Edith Bowman </strong>
-                                                        </small>
-                                                        <br> <small>
-                                                            Managing Director
-                                                        </small>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="row g-0">
-                                                <div class="col pt-4">
-                                                    <img class="img-fluid img-thumbnail" src="assets/img/Mask2.png"
-                                                        class="img-start" alt="...">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="card-body text-left">
-                                                    <p class="card-text text-center">
-                                                        <small>
-                                                            <strong>
-                                                                Edith Bowman </strong>
-                                                        </small>
-                                                        <br> <small>
-                                                            Managing Director
-                                                        </small>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div> -->
+
 </div>
 <div class="jumbotron pb-5" id="jumbotron4">
     <h1 class="display-4 text-center pt-5 fw-bold">Latest Articles & Tips</h1>
@@ -450,14 +337,7 @@
                 <div class="mb-3" *ngFor="let data of articleImage.slice(0, 1);">
                     <img [src]="data.image" class="card-img-top" alt="..." style="width: 100%;">
                     <div class="card-body text-left">
-                        <!-- <div class="row">
-                            <div class="col-6">
-                                <small class="text-muted">August 29, 2017</small>
-                            </div>
-                            <div class="col-6 text-end">
-                                <small class="text-muted">10:30 pm</small>
-                            </div>
-                        </div> -->
+                      
                         <h5 class="card-title pt-2 fw-bold "> <span>{{data.title}}</span></h5>
                         <p class="card-text"> {{data.description | slice:0:150 }}</p>
                         <p class="card-text">
@@ -495,19 +375,26 @@
                                         </small>
                                     </p>
                                 </div>
+
+                              
                             </div>
+                         
+                           
+                            
                         </div>
                     </li>
                 </ul>
+                <a class="btn btn-primary btn-l" routerLink="/moreArticle" role="button">View All</a>
+
             </div>
 
 
         </div>
-        <div class="row pt-3 text-center">
+        <!-- <div class="row pt-3 text-center">
             <div class="col">
                 <a class="btn btn-primary btn-l" routerLink="/moreArticle" role="button">View All</a>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 <div class="jumbotron pb-5">
