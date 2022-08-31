@@ -26,7 +26,7 @@ export class AuthService {
         localStorage.setItem('ROLE', 'professional');
       }
       this.loggedIn.next(true);
-      window.location.reload();
+      // window.location.reload();
     }
   }
   sociallogin(username:any,password:any) {
@@ -58,12 +58,12 @@ export class AuthService {
 
   logout() {
     this.loggedIn.next(false);
-   // this.router.navigate(['']);
+   this.router.navigate(['/']);
     this.isLogin = false;
     this.roleAs = '';
     localStorage.clear();
     localStorage.removeItem('ROLE');
-    window.location.reload();
+    // window.location.reload();
   }
 
 }

@@ -26,6 +26,7 @@ export class JobListingUserComponent implements OnInit {
     displayKey: "name",
     search: true,
     placeholder: 'Category',
+    height:'300px'
   };
 
   SearchData = {

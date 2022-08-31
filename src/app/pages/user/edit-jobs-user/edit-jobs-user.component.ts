@@ -35,11 +35,13 @@ export class EditJobsUserComponent implements OnInit {
     displayKey: "name",
     search: true,
     placeholder: 'Category',
+    height:'300px'
   };
   config2 = {
     displayKey: "name", // if objects array passed which key to be displayed defaults to description
     search: true,
     placeholder: 'Sub Category',
+    height:'300px'
   };
   config3 = {
     displayKey: "name", // if objects array passed which key to be displayed defaults to description

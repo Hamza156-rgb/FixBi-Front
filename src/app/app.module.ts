@@ -135,7 +135,8 @@ import { JobsAssignedComponent } from './pages/provider/jobs-assigned/jobs-assig
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              '644544687217-ton9i8jahc3lifucp4u2q7ns7qi2mdi9.apps.googleusercontent.com'
+              // '644544687217-ton9i8jahc3lifucp4u2q7ns7qi2mdi9.apps.googleusercontent.com'
+              '37768551355-quc0prkkvhus2nobk0g6ig2ril1ohkuj.apps.googleusercontent.com'
             )
           },
           {

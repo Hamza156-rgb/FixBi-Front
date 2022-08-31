@@ -92,7 +92,7 @@ export class SignInModalComponent implements OnInit {
           this.closeModal()
           this.authService.login(this.registerForm.value);
           this.shared.toastSuccess('Logged In Successfully')
-          //this.router.navigate(['/']);
+          this.router.navigate(['/']);
 
         }
 

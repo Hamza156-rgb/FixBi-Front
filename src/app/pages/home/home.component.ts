@@ -5,11 +5,11 @@ import { SignInModalComponent } from 'src/app/modals/sign-in-modal/sign-in-modal
 import { SignUpModalComponent } from 'src/app/modals/sign-up-modal/sign-up-modal.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConfigService } from 'src/providers/config/config.service';
-import { Router,NavigationExtras, } from '@angular/router';
+import { Router, NavigationExtras, } from '@angular/router';
 import { SharedDataService } from 'src/providers/shared-data/shared-data.service';
 import { ApiService } from 'src/providers/api/api.service';
 import { HelperService } from 'src/providers/helper/helper.service';
-import {ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +21,7 @@ import {ChangeDetectorRef } from '@angular/core';
 export class HomeComponent implements OnInit {
   registerForm!: FormGroup;
   getOfferForm!: FormGroup;
-  currentUser : any = {};
+  currentUser: any = {};
 
   temp: any; // for handling temporory data from observables.
   submitted = false;
@@ -41,11 +41,14 @@ export class HomeComponent implements OnInit {
     displayKey: "name",
     search: true,
     placeholder: 'Category',
+    height: '300px'
+
   };
   config2 = {
     displayKey: "name", // if objects array passed which key to be displayed defaults to description
     search: true,
     placeholder: 'Sub Category',
+    height: '300px'
   };
 
   config3 = {
@@ -167,9 +170,9 @@ export class HomeComponent implements OnInit {
     city: [],
     region: [],
     country: [],
-    work_description:''
+    work_description: ''
   }
-user_id =localStorage.getItem('user_id');
+  user_id = localStorage.getItem('user_id');
   modalCategory: any;
   constructor(
     config1: NgbCarouselConfig,
@@ -178,7 +181,7 @@ user_id =localStorage.getItem('user_id');
     public config: ConfigService,
     public router: Router,
     public shared: SharedDataService,
-    public api: ApiService, private helper: HelperService,private cdref: ChangeDetectorRef
+    public api: ApiService, private helper: HelperService, private cdref: ChangeDetectorRef
 
   ) {
     config1.interval = 7000;
@@ -195,9 +198,10 @@ user_id =localStorage.getItem('user_id');
     this.getfeaturedProviders();
     this.getArticles();
     this.registerForm = this.formBuilder.group({
-      title: ['', Validators.required],
-      keyword: ['', Validators.required],
-      subtitle: ['', Validators.required],
+      category: ['', Validators.required],
+
+      // keyword: ['', Validators.required],
+      subCategory: ['', Validators.required],
       country: ['', Validators.required],
       city: ['', Validators.required],
       region: ['', Validators.required],
@@ -265,13 +269,12 @@ user_id =localStorage.getItem('user_id');
   }
   getNewProviders() {
     var param = '';
-    if(localStorage.getItem('user_id'))
-    {
-      param = '?customer_id='+localStorage.getItem('user_id');
+    if (localStorage.getItem('user_id')) {
+      param = '?customer_id=' + localStorage.getItem('user_id');
     }
 
     this.config.getHttp('auth/getNewProviders' + param, '').then((data: any) => {
-      if(data.data.length > 0){
+      if (data.data.length > 0) {
         this.newProvders = data.data;
         var i = 0, tempArr = [];
         while (i < this.newProvders.length) {
@@ -291,12 +294,11 @@ user_id =localStorage.getItem('user_id');
   }
   getfeaturedProviders() {
     var param = '';
-    if(localStorage.getItem('user_id'))
-    {
-      param = '?customer_id='+localStorage.getItem('user_id');
+    if (localStorage.getItem('user_id')) {
+      param = '?customer_id=' + localStorage.getItem('user_id');
     }
     this.config.getHttp('auth/getFeaturedProviders' + param, '').then((data: any) => {
-      if(data.data.length > 0){
+      if (data.data.length > 0) {
         this.featuredProviders = data.data;
       }
 
@@ -370,11 +372,11 @@ user_id =localStorage.getItem('user_id');
     }
     let navigationExtras: NavigationExtras = {
       state: {
-       searchResult: JSON.stringify(this.searchBox),
-        
+        searchResult: JSON.stringify(this.searchBox),
+
       }
     };
-    this.router.navigate(['searchPage'],navigationExtras);
+    this.router.navigate(['searchPage'], navigationExtras);
 
 
   }
@@ -407,140 +409,138 @@ user_id =localStorage.getItem('user_id');
     // console.log(id);
     this.router.navigate(['/articles', id])
   }
-  addToFav(provider:any){
-    if(localStorage.getItem('user_id'))
-    {
-    for(var singlearray of this.res){
-      for(var p of singlearray){
-       if(provider.id == p.id){
-        p.is_liked = true;
-       }
+  addToFav(provider: any) {
+    if (localStorage.getItem('user_id')) {
+      for (var singlearray of this.res) {
+        for (var p of singlearray) {
+          if (provider.id == p.id) {
+            p.is_liked = true;
+          }
+        }
       }
-    }
-    for(var fp of this.featuredProviders){
-      if(provider.id == fp.id){
-        fp.is_liked = true;
-       }
-    }
-    this.config.postHttp('addCustomerFavorite?customer_id=' + localStorage.getItem('user_id') +'&provider_id=' + provider.user_id, '').then((data: any) => {
-      this.shared.toastSuccess('Supplier Added To Favourites');
-    })
-  }
-  else{
-    const modalRef = this.modalService.open(SignInModalComponent, { size: 'xl', centered: true });
-    modalRef.result.then((result) => {
-    }).catch((error) => {
-      console.log(error);
-    });
-  }
-   }
-   removeFromFav(provider:any){
-    if(localStorage.getItem('user_id'))
-    {
-    for(var singlearray of this.res){
-      for(var p of singlearray){
-       if(provider.id == p.id){
-        p.is_liked = false;
-       }
+      for (var fp of this.featuredProviders) {
+        if (provider.id == fp.id) {
+          fp.is_liked = true;
+        }
       }
+      this.config.postHttp('addCustomerFavorite?customer_id=' + localStorage.getItem('user_id') + '&provider_id=' + provider.user_id, '').then((data: any) => {
+        this.shared.toastSuccess('Supplier Added To Favourites');
+      })
     }
-    for(var fp of this.featuredProviders){
-      if(provider.id == fp.id){
-        fp.is_liked = false;
-       }
-    }
-    this.config.postHttp('deleteFavorite?customer_id=' + localStorage.getItem('user_id') +'&provider_id=' + provider.user_id, '').then((data: any) => {
-      this.shared.toastDanger('Supplier Removed From Favourites');
-    })
-  }
-    else{
+    else {
       const modalRef = this.modalService.open(SignInModalComponent, { size: 'xl', centered: true });
       modalRef.result.then((result) => {
       }).catch((error) => {
         console.log(error);
       });
     }
-   }
-   ongetOffer(){
-    this.config.postHttp('search/getResults',this.getOffer).then((data: any) => {
+  }
+  removeFromFav(provider: any) {
+    if (localStorage.getItem('user_id')) {
+      for (var singlearray of this.res) {
+        for (var p of singlearray) {
+          if (provider.id == p.id) {
+            p.is_liked = false;
+          }
+        }
+      }
+      for (var fp of this.featuredProviders) {
+        if (provider.id == fp.id) {
+          fp.is_liked = false;
+        }
+      }
+      this.config.postHttp('deleteFavorite?customer_id=' + localStorage.getItem('user_id') + '&provider_id=' + provider.user_id, '').then((data: any) => {
+        this.shared.toastDanger('Supplier Removed From Favourites');
+      })
+    }
+    else {
+      const modalRef = this.modalService.open(SignInModalComponent, { size: 'xl', centered: true });
+      modalRef.result.then((result) => {
+      }).catch((error) => {
+        console.log(error);
+      });
+    }
+  }
+  ongetOffer() {
+    this.config.postHttp('search/getResults', this.getOffer).then((data: any) => {
       // console.log(data.data)
-      if(data.data.length == 0){
+      if (data.data.length == 0) {
         this.shared.toastDanger('No Providers Found Near You.');
         return;
       }
-      else{
-        for(var d = 0;d < data.data.length;d++){
-          this.selectUser(data.data[d],this.getOffer.work_description);
-          if(d == data.data.length -1){
+      else {
+        for (var d = 0; d < data.data.length; d++) {
+          this.selectUser(data.data[d], this.getOffer.work_description);
+          if (d == data.data.length - 1) {
             this.shared.toastSuccess('Providers Near you informed');
             setTimeout(() => {
               this.api.conversations = [];
             }, 300);
-            
+
           }
 
-      }
+        }
       }
 
-  })
-   }
-   getCurrentUser() {
+    })
+  }
+  getCurrentUser() {
     this.api.setCurrentUser(localStorage.getItem('user_id'));
-}
-   async selectUser(user,msgg) {
+  }
+  async selectUser(user, msgg) {
     // try {
     //   this.helper.closeModal()
     // } catch (e) { console.log(e) }
-  
+
     if (this.api.currentUser.conversations == undefined) {
       //means user has no conversations.
       this.api.currentUser.conversations = [];
     }
-    let chat:any = {};
-    let messages:any = [];
+    let chat: any = {};
+    let messages: any = [];
     let convo = [...this.api.currentUser.conversations]; //spread operators for ensuring type Array.
     console.log(convo);
     let find = convo.find(item => item.uid == user.user_id); // Check If Its the same person who user has talked to before,
-   
+
     if (find) { // Conversation Found 
       this.api.getChat1(find.chatId).subscribe(x => {
         x.docs.map(doc => {
-        this.temp = doc.data();
-        chat = this.temp;
-       messages = chat.messages == undefined ? [] : chat.messages;
+          this.temp = doc.data();
+          chat = this.temp;
+          messages = chat.messages == undefined ? [] : chat.messages;
 
-          this.sendMessage(chat.chatId,msgg,messages);
-  
+          this.sendMessage(chat.chatId, msgg, messages);
+
         })
       })
     } else {
       /* User is talking to someone for the very first time. */
-     chat = this.api.addNewChat1();
+      chat = this.api.addNewChat1();
 
       // .then(async (data:any) => { // This will create a chatId Instance. 
       //  // Now we will let both the users know of the following chatId reference
       //  console.log(data);
-       let b = this.api.addConvo1(user,chat); //passing other user info
-     
-        this.sendMessage(chat,msgg,messages);
-      
-        
+      let b = this.api.addConvo1(user, chat); //passing other user info
+
+      this.sendMessage(chat, msgg, messages);
+
+
       // })
-  
+
     }
   }
-  sendMessage(chat,message,messages) {
+  sendMessage(chat, message, messages) {
     let msg = {
       senderId: this.api.currentUser.uid,
       senderName: this.api.currentUser.name,
       timestamp: new Date(),
-      is_seen:false,
+      is_seen: false,
       content: message
     };
     //update 
     messages.push(msg);
-  // console.log(chat,messages);
-    this.api.pushNewMessage1(chat,messages).then(() => {
+    // console.log(chat,messages);
+    this.api.pushNewMessage1(chat, messages).then(() => {
     })
   }
 }

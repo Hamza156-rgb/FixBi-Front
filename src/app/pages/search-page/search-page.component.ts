@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  ActivatedRoute, Router,NavigationExtras } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { ConfigService } from 'src/providers/config/config.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
@@ -8,82 +8,89 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./search-page.component.scss']
 })
 export class SearchPageComponent implements OnInit {
-searchResult :any = [];
-searchTerms:any ={};
-registerForm!: FormGroup;
-submitted = false;
-config1 = {
-  displayKey: "name",
-  search: true,
-  placeholder: 'Category',
-};
-config2 = {
-  displayKey: "name", // if objects array passed which key to be displayed defaults to description
-  search: true,
-  placeholder: 'Sub Category',
-};
+  searchResult: any = [];
+  searchTerms: any = {};
+  registerForm!: FormGroup;
+  submitted = false;
+  config1 = {
+    displayKey: "name",
+    search: true,
+    placeholder: 'Category',
+    height:'300px'
+  };
+  config2 = {
+    displayKey: "name", // if objects array passed which key to be displayed defaults to description
+    search: true,
+    placeholder: 'Sub Category',
+    height:'300px'
 
-config3 = {
-  displayKey: "name", // if objects array passed which key to be displayed defaults to description
-  search: true,
-  placeholder: 'Country',
-};
+  };
 
-config4 = {
-  displayKey: "name", // if objects array passed which key to be displayed defaults to description
-  search: true,
-  placeholder: 'City',
-};
+  config3 = {
+    displayKey: "name", // if objects array passed which key to be displayed defaults to description
+    search: true,
+    placeholder: 'Country',
+
+  };
+
+  config4 = {
+    displayKey: "name", // if objects array passed which key to be displayed defaults to description
+    search: true,
+    placeholder: 'City',
+  
+  };
 
 
-config5 = {
-  displayKey: "name", // if objects array passed which key to be displayed defaults to description
-  search: true,
-  placeholder: 'Region',
-};
-searchBox = {
-  keyword: '',
-  category: '',
-  sub_category: [],
-  city: [],
-  region: [],
-  country: []
-}
-categories: any = [];
-sub_categories = [];
-countries = [];
-city = [];
-region = [];
-res: any = [];
-random = -1;
-  constructor(private route: ActivatedRoute, public router: Router,public config: ConfigService,private formBuilder: FormBuilder) {
+  config5 = {
+    displayKey: "name", // if objects array passed which key to be displayed defaults to description
+    search: true,
+    placeholder: 'Region',
+  
+  };
+  searchBox = {
+    keyword: '',
+    category: '',
+    sub_category: [],
+    city: [],
+    region: [],
+    country: []
+  }
+  categories: any = [];
+  sub_categories = [];
+  countries = [];
+  city = [];
+  region = [];
+  res: any = [];
+  random = -1;
+  constructor(private route: ActivatedRoute, public router: Router, public config: ConfigService, private formBuilder: FormBuilder) {
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation()?.extras.state) {
-      this.searchTerms = JSON.parse(this.router.getCurrentNavigation()?.extras?.state?.searchResult);
-      console.log(this.searchTerms)
-      this.config.postHttp('search/getResults',this.searchTerms).then((data: any) => {
-        this.searchResult = data.data;
-        console.log(this.searchResult);
-        if(this.searchResult.length == 0){
-          this.random = 0;
-        }else{
-          this.random = -1;
-        }
-    })
+        this.searchTerms = JSON.parse(this.router.getCurrentNavigation()?.extras?.state?.searchResult);
+        console.log(this.searchTerms)
+        this.config.postHttp('search/getResults', this.searchTerms).then((data: any) => {
+          this.searchResult = data.data;
+          console.log(this.searchResult);
+          if (this.searchResult.length == 0) {
+            this.random = 0;
+          } else {
+            this.random = -1;
+          }
+        })
       }
-      else{
+      else {
         this.random = 0;
       }
     })
-   }
+  }
 
   ngOnInit(): void {
     this.getCategory();
     this.getCountry();
     this.registerForm = this.formBuilder.group({
-      title: ['', Validators.required],
-      keyword: ['', Validators.required],
-      subtitle: ['', Validators.required],
+      category: ['', Validators.required],
+
+      // keyword: ['', Validators.required],
+      subCategory: ['', Validators.required],
       country: ['', Validators.required],
       city: ['', Validators.required],
       region: ['', Validators.required],
@@ -93,15 +100,25 @@ random = -1;
 
   }
   onSubmit() {
-    this.config.postHttp('search/getResults',this.searchBox).then((data: any) => {
-      console.log(data.data);
-      this.searchResult = data.data
-      if(this.searchResult.length == 0){
-        this.random = 0;
-      }else{
-        this.random = -1;
-      }
-  })
+
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+    }
+
+    else {
+      this.config.postHttp('search/getResults', this.searchBox).then((data: any) => {
+        console.log(data.data);
+        this.searchResult = data.data
+        if (this.searchResult.length == 0) {
+          this.random = 0;
+        } else {
+          this.random = -1;
+        }
+      })
+    }
+
+
 
   }
   searchCountry(event: any) {
@@ -144,14 +161,14 @@ random = -1;
 
     })
   }
-  viewProfile(profile:any){
+  viewProfile(profile: any) {
     let navigationExtras: NavigationExtras = {
       state: {
-       profile: JSON.stringify(profile),
-        
+        profile: JSON.stringify(profile),
+
       }
     };
-    this.router.navigate(['viewProfile'],navigationExtras);
+    this.router.navigate(['viewProfile'], navigationExtras);
   }
   get f() { return this.registerForm.controls; }
 }

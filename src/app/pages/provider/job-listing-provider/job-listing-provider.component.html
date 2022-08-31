@@ -40,12 +40,12 @@
                                 src="assets/img/search.png" /></span>
                         <input type="text" class="form-control" placeholder="Keywords" aria-label="Username"
                             aria-describedby="basic-addon1" [(ngModel)]="SearchData.keyword" name="something"
-                            [ngClass]="{ 'is-invalid': submitted && f.keyword.errors }" formControlName="keyword">
+                            formControlName="keyword">
 
-                        <div *ngIf="submitted && f.keyword.errors" class="invalid-feedback">
+                        <!-- <div *ngIf="submitted && f.keyword.errors" class="invalid-feedback">
                             <div *ngIf="f.keyword.errors.required">Keyword is Required</div>
 
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="col-xs-8 col-sm-4 mt-2">

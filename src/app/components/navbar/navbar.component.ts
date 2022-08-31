@@ -4,6 +4,7 @@ import { SignInModalComponent } from 'src/app/modals/sign-in-modal/sign-in-modal
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth.service';
 import { ConfigService } from 'src/providers/config/config.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class NavbarComponent implements OnInit {
 
   // pdf: any = '';
   constructor(public modalService: NgbModal, private authService: AuthService,
-    public config: ConfigService,
+    public config: ConfigService, private router: Router,
   ) { }
   openModal() {
     //ModalComponent is component name where modal is declare
@@ -59,5 +60,7 @@ export class NavbarComponent implements OnInit {
 
   onLogout() {
     this.authService.logout();
+    this.router.navigate(['/']);
+
   }
 }
