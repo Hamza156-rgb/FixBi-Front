@@ -117,9 +117,9 @@ export class HomeComponent implements OnInit {
   ]
   title = 'ng-carousel-demo';
   mainSliderImages = [
-    { title: 'Find The Service You Looking For', short: 'First Slide Short', src: "assets/img/home.jpg" },
-    { title: 'Find The Service You Looking For', short: 'Second Slide Short', src: "assets/img/home.jpg" },
-    { title: 'Find The Service You Looking For', short: 'Third Slide Short', src: "assets/img/home.jpg" }
+    { title: 'Find The Services You Are Looking For', short: 'First Slide Short', src: "assets/img/home.jpg" },
+    { title: 'Find The Services You Are Looking For', short: 'Second Slide Short', src: "assets/img/home.jpg" },
+    { title: 'Find The Services You Are Looking For', short: 'Third Slide Short', src: "assets/img/home.jpg" }
   ];
   newProvders: any = [];
   featuredProviders: any = [];
@@ -199,8 +199,7 @@ export class HomeComponent implements OnInit {
     this.getArticles();
     this.registerForm = this.formBuilder.group({
       category: ['', Validators.required],
-
-      // keyword: ['', Validators.required],
+       keyword: [''],
       subCategory: ['', Validators.required],
       country: ['', Validators.required],
       city: ['', Validators.required],

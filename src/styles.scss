@@ -10,7 +10,7 @@
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+body { margin: 0;  font-family: 'Open Sans', sans-serif;
     .snack-danger {
     background:#DC3545;
     color: white;
@@ -19,4 +19,36 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
     background:#00B74A;
     color: white;
   } 
+  .carousel-indicators{
+    bottom:3rem !important
+  }
+  @media only screen and (max-width: 600px) {
+    .carousel-indicators{
+      bottom:0 !important
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    .carousel-indicators{
+      bottom:1rem !important
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .carousel-indicators{
+      bottom:1rem !important
+    }
+  }
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .carousel-indicators{
+      bottom:2rem !important
+    }
+  }
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    .carousel-indicators{
+      bottom:3rem !important
+    }
+  }
 }

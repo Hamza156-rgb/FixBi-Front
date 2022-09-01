@@ -1,5 +1,6 @@
 .navbar-light .navbar-nav .nav-link {
     color: black;
+    font-size:13px;
 }
 
 .navbar-light .navbar-nav .nav-link:hover{
@@ -15,6 +16,9 @@
 
 button#pdfdownload2.btn.btn-outline-primary.me-md-2{
     background-color: transparent !important;
+}
+.btn{
+    font-size:13px
 }
 .btn:focus, .btn:active{
     box-shadow: none !important;

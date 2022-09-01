@@ -78,8 +78,8 @@ export class ApiService {
     );
 
      this.all$.subscribe((res:any) =>{
-      // console.log(res);
-      if(res.users.conversations)
+      
+      if(res.users?.conversations)
       {
         for(let con = 0;con < res.users.conversations.length; con++)
         {
