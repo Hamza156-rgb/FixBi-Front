@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
-    <div id="header">
-        <h1 class="fw-bold text-center text-white">About</h1>
-    </div>
+<div id="header">
+    <h1 class="fw-bold text-center text-white">About</h1>
+</div>
 <div class="jumbotron pb-5" id="firstpabout">
     <h4 class="display-8 text-center pt-5">
         <p>
@@ -20,10 +20,10 @@
                     <div class="card-body text-center ">
                         <div class="card-header mt-4">
                             <span class="tg-background ">
-                                <img [src]="data.img" >
+                                <img [src]="data.img">
                             </span>
                         </div>
-                       
+
                         <h5 class="card-title pt-5">{{data.title}}</h5>
                         <p class="card-text">
                             {{data.text}}
@@ -74,49 +74,50 @@
 <div class="jumbotron pb-3">
     <div class="container w-80 pb-5 pt-5">
         <div class="row pt-5">
-            <div class="col-xs-12 pt-2 col-sm-12 col-md-4" >
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 pt-2">
                 <img class="img-fluid" src="assets/img/rotate.png">
             </div>
-            <div class="col-xs-12 pt-2 col-sm-12 col-md-3 align-self-center">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 pt-2  align-self-center">
                 <h3 style="text-align: center;">Become member now
-                  </h3>
-                  <p class="lead" style="text-align: center; margin-left: 5% ">
+                </h3>
+                <p class="lead" style="text-align: center; margin-left: 5% ">
                     Sign up and find your service provider
-                  </p>
+                </p>
             </div>
-            <div class="col-xs-12 pt-2 col-sm-12 col-md-5 align-self-center">
+            <div class="col-xs-12  col-sm-12 col-md-5 col-md-5 pt-2 align-self-center">
                 <p class="lead">
                 <div class="menu-logged-out-container">
-                  <div class="tg-footercolumn tg-widget widget_nav_menu tg-widget text-center" id="nav_menu-3">
-                    <div class="menu-logged-out-container">
-                      <ul id="menu-logged-out-1" class="menu" *ngIf="!loggedIn">
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1420">
-                          <button class="btn btn-success" id="customersign" data-bs-toggle="modal" (click)="openSignUpModal()"
-                            type="button">Signup as a customer</button>
-                        </li>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1420 pt-1">
-                          <button class="btn btn-primary col-sm-12 col-xs-12" id="professionalsign" data-bs-toggle="modal" (click)="openSignUpModal()"
-                            type="button">Signup as a professional </button>
-                        </li>
-                      </ul>
+                    <div class="tg-footercolumn tg-widget widget_nav_menu tg-widget text-center" id="nav_menu-3">
+                        <div class="menu-logged-out-container">
+                            <ul id="menu-logged-out-1" class="menu" *ngIf="!loggedIn">
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1420">
+                                    <button class="btn btn-success btn-lg" id="customersign" data-bs-toggle="modal"
+                                        (click)="openSignUpModal()" type="button">Signup as a customer</button>
+                                </li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1420 pt-2">
+                                    <button class="btn btn-primary btn-lg " id="professionalsign" data-bs-toggle="modal"
+                                        (click)="openSignUpModal()" type="button">Signup as a professional </button>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                  </div>
                 </div>
             </div>
             <h1 class="display-4 text-center pt-5" style="font-weight: bold;">Our loyal partners </h1>
-            <p m-3>Thanks for our partners sharing The new technologies and the smart way of life brought by Fixbi.co as a 
+            <p m-3>Thanks for our partners sharing The new technologies and the smart way of life brought by Fixbi.co as
+                a
                 Solution based maintenance portal on the web.</p>
-                <div class="row" id="row">
-                        <div *ngFor="let partner of partners" class="col-md-3 pt-4 col-sm-3 " id="col">
-                            <div  id="colpart">
-                                <div class="card-body text-center">
-                                        <!-- <img [src]="partner.image"> -->
-                                        <p>İnfo will be released soon
-                                        </p>
-                                </div>
-                            </div>
+            <div class="row" id="row">
+                <div *ngFor="let partner of partners" class="col-md-3 pt-4 col-sm-3 " id="col">
+                    <div id="colpart">
+                        <div class="card-body text-center">
+                            <!-- <img [src]="partner.image"> -->
+                            <p>İnfo will be released soon
+                            </p>
                         </div>
+                    </div>
                 </div>
+            </div>
         </div>
     </div>
 </div>

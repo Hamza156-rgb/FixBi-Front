@@ -5,11 +5,26 @@
   padding: 15px 0;
   font-size: 13px;
   line-height: 20px;
-  background: #5DB846;
+  background: #5db846;
+}
+
+.tg-widgettitle h3 {
+  font-size: 21px;
+  font-family: "Open Sans";
+  font-weight: bold;
 }
 
 li {
   list-style: none;
+  font-size: 18px;
+  font-family: "Open Sans";
+}
+
+.btn {
+  font-size: 12px;
+  font-family: "Open Sans";
+  width: 70%;
+  padding: 10px;
 }
 
 .tg-widget .tg-socialicons li {
@@ -21,11 +36,11 @@ li {
 }
 
 .sp-service-about .tg-contactinfo {
-  padding: 0;
+  padding-left: 0;
 }
 
 .tg-socialicons li a i {
-  color: #2367BC;
+  color: #2367bc;
   width: 30px;
   display: block;
   font-size: 13px;
@@ -56,13 +71,11 @@ a {
   padding: 15px 0;
   font-size: 13px;
   line-height: 20px;
-  background: #5DB846;
+  background: #5db846;
 }
 
 footer {
   background-color: rgb(247, 247, 247);
-
-
 }
 
 svg {
@@ -73,29 +86,160 @@ ul {
   padding-left: 0rem;
 }
 
-#nav_menu-3 {
-  margin-left: 10%
-}
-
 #CustomerLogin {
+  // padding: 5px;
 
-  padding: 5px;
-  width: calc(93% - 10px);
-  background: #5DB846;
-  border:  #5DB846;
+  background: #5db846;
+  border: #5db846;
 }
 
 #Servicelogin {
-  padding: 5px;
-  width: calc(93% - 10px);
   background-color: #2367bc;
 }
 
 #QTech {
-
   color: white;
 }
 
 #rowf {
   padding-top: 50px;
+}
+
+.posttext {
+  font-size: 15px;
+  font-family: "Open Sans";
+}
+
+.tg-contactinfo li {
+  font-size: 18px;
+}
+
+// #menu2{
+//   margin-left: 20px;
+// }
+
+@media only screen and (max-width: 600px) {
+  .tg-widgettitle h3 {
+    font-size: 14px;
+  }
+
+  .tg-widgettitle li {
+    list-style: none;
+    font-size: 12px;
+  }
+
+  .tg-contactinfo li {
+    font-size: 12px;
+  }
+
+  .btn {
+    font-size: 10px;
+    width: 70%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .tg-widgettitle h3 {
+    font-size: 15px;
+  }
+
+  .tg-widgettitle li {
+    list-style: none;
+    font-size: 13px;
+  }
+
+  .tg-contactinfo li {
+    font-size: 13px;
+  }
+
+  .btn {
+    font-size: 10px;
+    width: 50%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .posttext {
+    font-size: 10px;
+  }
+
+  #nav_menu-3 {
+    margin-left: 20%;
+  }
+  .tg-widgettitle h3 {
+    font-size: 18px;
+  }
+
+  .tg-widgettitle li {
+    list-style: none;
+    font-size: 15px;
+  }
+
+  .tg-contactinfo li {
+    font-size: 15px;
+  }
+
+  .btn {
+    font-size: 11px;
+    width: 80%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .posttext {
+    font-size: 13px;
+  }
+
+  #nav_menu-3 {
+    margin-left: 20%;
+  }
+
+  .tg-widgettitle h3 {
+    font-size: 21px;
+  }
+
+  .tg-widgettitle li {
+    list-style: none;
+    font-size: 18px;
+  }
+
+  .tg-contactinfo li {
+    font-size: 18px;
+  }
+
+  .btn {
+    font-size: 12px;
+    width: 70%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .posttext {
+    font-size: 15px;
+  }
+  .tg-widgettitle h3 {
+    font-size: 21px;
+    font-family: "Open Sans";
+    font-weight: bold;
+  }
+
+  .tg-widgettitle li {
+    list-style: none;
+    font-size: 18px;
+    font-family: "Open Sans";
+  }
+
+  .tg-contactinfo li {
+    font-size: 18px;
+  }
+
+  .btn {
+    font-size: 13px;
+    font-family: "Open Sans";
+    width: 70%;
+  }
 }

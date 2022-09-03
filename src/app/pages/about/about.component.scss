@@ -6,32 +6,28 @@
 }
 
 #firstpabout {
-
     background-color: rgb(247, 247, 247);
 }
 
 #Introducingcontainer {
-    background-color: #5DB846;
+    background-color: #5db846;
 
     padding-bottom: 6%;
 }
 
 #pharandfont {
-
     color: white;
     font-size: 22px;
 }
 
-
 #customersign {
-    background-color: #5DB846;
+    background-color: #2367bc;
     border: none;
-    width: calc(64% - 10px);
 }
 
 #professionalsign {
-    width: calc(64% - 10px);
-    background-color: #2367bc;
+    background-color: #5db846;
+    border: none;
 }
 
 li {
@@ -40,9 +36,9 @@ li {
 
 #colpart {
     text-align: center;
-    background-color: #F4F4F4;
+    background-color: #f4f4f4;
     border-radius: 10px;
-    padding: 2%
+    padding: 2%;
 }
 
 #partners {
@@ -57,11 +53,25 @@ li {
     border-radius: 10px;
 }
 
+@media only screen and (max-width: 600px) {
+    .btn {
+        width: 100%;
+        font-size: 12px;
+    }
+}
 
-@media screen and (max-width:768px) {
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .btn {
+        width: 100%;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
     iframe {
         width: "70%";
-        height: "200%"
+        height: "200%";
     }
 
     #imagetestp {
@@ -75,12 +85,29 @@ li {
     #colorp {
         text-align: left;
     }
-    #header{
-        width:100%;
+    #header {
+        width: 100%;
     }
-    #professionalsign {
-        width: calc(67% - 10px);
-        background-color: #2367bc;
+
+    .btn {
+        width: 100%;
+        font-size: 12px;
     }
-   
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .btn {
+        width: 50%;
+        font-size: 12px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .btn {
+        width: 50%;
+        font-size: 12px;
+        padding: 8px;
+    }
 }

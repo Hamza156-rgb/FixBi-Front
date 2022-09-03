@@ -1,18 +1,18 @@
 <footer id="tg-footer" class="tg-footer tg-haslayout">
   <div class="container">
     <div class="row" id="rowf">
-      <div class="col-xs-8 col-sm-4">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <div class="tg-footercolumn tg-footercolumn sp-service-about tg-widget" id="service_aboutus-3">
           <strong class="tg-logo">
             <a routerLink="/">
               <img src="assets/img/FixBiLogoFooter.png" class="logo" alt="Logo" _mstalt="44941">
             </a>
           </strong>
-          <div class="tg-description">
+          <div class="tg-description mt-2">
             <p _msthash="668681" class="text-left" _msttexthash="1030185">Time sensitive service finder portal.
             </p>
           </div>
-          <ul class="tg-contactinfo">
+          <ul class="tg-contactinfo mt-2">
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="12.335" height="17.029" viewBox="0 0 12.335 17.029">
                 <g id="maps-and-flags_4_" data-name="maps-and-flags (4)" transform="translate(-70.573)">
@@ -23,10 +23,10 @@
                   </g>
                 </g>
               </svg>
-              <span><a href="#" _msthash="667771" _msttexthash="746278">Kayer 8 Apt. No:3 Karakum - Kyrenia</a></span>
+              <span><a href="#"  _msthash="667771" _msttexthash="746278">Kayer 8 Apt. No:3 Karakum - Kyrenia</a></span>
 
             </li>
-            <li>
+            <li class="mt-1">
 
 
               <svg xmlns="http://www.w3.org/2000/svg" width="12.335" height="12.361" viewBox="0 0 12.335 12.361">
@@ -39,11 +39,11 @@
                 </g>
               </svg>
 
-              <span><a href="tel:+90 548 888 1158" _msthash="667901" _msttexthash="116350">+90 548 888 1158</a></span>
+              <span ><a  href="tel:+90 548 888 1158" _msthash="667901" _msttexthash="116350">+90 548 888 1158</a></span>
             </li>
 
 
-            <li>
+            <li class="mt-1">
               <svg xmlns="http://www.w3.org/2000/svg" width="12.335" height="8.48" viewBox="0 0 12.335 8.48">
                 <g id="email_4_" data-name="email (4)" transform="translate(0 -80)">
                   <g id="Group_153" data-name="Group 153" transform="translate(8.177 81.563)">
@@ -76,7 +76,7 @@
               </svg>
               <span><a href="mailto:info@fixbi.co" _msthash="668031" _msttexthash="213707">info@fixbi.co</a></span>
             </li>
-            <li>
+            <li class="mt-1">
               <svg id="barricade" xmlns="http://www.w3.org/2000/svg" width="12.335" height="9.432"
                 viewBox="0 0 12.335 9.432">
                 <path id="Path_78" data-name="Path 78" d="M197.763,63.2l-4.013,4.013h1.3l4.013-4.013Zm0,0"
@@ -111,7 +111,7 @@
                   _msttexthash="550953">smartsolutions@fixbi.co</a></span>
             </li>
           </ul>
-          <ul class="tg-socialicons">
+          <ul class="tg-socialicons mt-2">
             <li class="tg-facebook"><a href="https://www.facebook.com/"><img src="assets/img/facebook.png" /></a></li>
             <li class="tg-twitter">
               <a href="#"><img src="assets/img/twitter.png" /></a>
@@ -124,8 +124,8 @@
           </ul>
         </div>
       </div>
-      <div class="col-xs-8 col-sm-4">
-        <div class="tg-footercolumn tg-widget tg-burfats tg-widget" id="listingo_recentposts-2">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <div class="tg-footercolumn tg-widget tg-burfats tg-widget" id="menu2">
           <ul class="tg-widgettitle">
             <ul>
               <li>
@@ -135,21 +135,21 @@
           </ul>
           <ul>
             <ul>
-              <li *ngFor="let data of articleImage.slice(0, 3);">
+              <li class="mt-2" *ngFor="let data of articleImage.slice(0, 3); ">
                 <div class="row g-0">
-                  <div class="col-md-4 ">
-                    <img src="{{data.image}}" class="img-start" alt="..." style="width: 100%;">
+                  <div class=" col-xs-12 col-sm-12 col-md-4  col-lg-4">
+                    <img src="{{data.image}}" class="img-start" alt="..." style="width: 100%;border-radius: 6px; " >
                   </div>
-                  <div class="col-md-8 align-self-center">
+                  <div class=" col-xs-12 col-sm-12 col-md-8 col-md-8 align-self-center">
                     <div class="card-body text-left">
 
 
-                      <p class="card-text  p-2">
+                      <p class="card-text" style="padding: 1px 0px 0px 8px">
                         <font _mstmutation="1" _msthash="2587624" _msttexthash="2917707"><small _mstmutation="1">
-                            <strong> {{data.title}}
+                            <strong style="font-family:Open Sans "> {{data.title}}
                             </strong>
                           </small><br>
-                          <small _mstmutation="1">
+                          <small _mstmutation="1" class="posttext">
                             {{data.description | slice:0:50 }}
 
                           </small>
@@ -220,7 +220,7 @@
           </ul>
         </div>
       </div>
-      <div class="col-xs-8 col-sm-4">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <div class="tg-footercolumn tg-widget widget_nav_menu tg-widget" id="nav_menu-3">
           <div class="tg-widgettitle">
             <h3 _msthash="407914" _msttexthash="179426" class="text-left">Useful Links</h3>
@@ -228,22 +228,22 @@
           <div class="menu-logged-out-container">
             <ul id="menu-logged-out-1" class="menu">
               <li
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-974 current_page_item menu-item-1365">
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-974 current_page_item menu-item-1365 mt-2">
                 <a routerLink="/" _msthash="449293" _msttexthash="43979">Home</a>
               </li>
-              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1366"><a routerLink="/about"
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1366  mt-2"><a routerLink="/about"
                   _msthash="449423" _msttexthash="60892">About</a></li>
 
-              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1366"><a
-                  href="./terms-condition" _msthash="449423" _msttexthash="60892">Terms and Condition</a></li>
+              <!-- <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1366"><a
+                  href="./terms-condition" _msthash="449423" _msttexthash="60892">Terms and Condition</a></li> -->
 
-              <div *ngIf="!loggedIn" class="mt-2">
+              <div *ngIf="!loggedIn" class="mt-4">
                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1420">
-                  <button class="btn btn-success" id="CustomerLogin" type="button" data-bs-toggle="modal"
+                  <button class="btn btn-success btn-lg" id="CustomerLogin" type="button" data-bs-toggle="modal"
                     (click)="openLogInModal()" _msthash="800670" _msttexthash="229905">Customer Login</button>
                 </li>
-                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1420 pt-1">
-                  <button class="btn btn-primary" id="Servicelogin" type="button" data-bs-toggle="modal"
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1420 pt-2">
+                  <button class="btn btn-primary btn-lg" id="Servicelogin" type="button" data-bs-toggle="modal"
                     (click)="openLogInModal()" _msthash="800917" _msttexthash="205933">Service login </button>
                 </li>
               </div>

@@ -462,6 +462,15 @@ li {
 .button{
   width:100%
 }
+
+
+.posttext{
+  // font-size: 15px;
+  font-family: "Open Sans";
+}
+
+
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .carousel-caption{
@@ -566,6 +575,12 @@ li {
     height: 400px;
     border-radius: 10px
   }
+  .posttext{
+    font-size: 13px;
+   
+  }
+  
+  
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -589,6 +604,12 @@ li {
     max-width: 410px;
     height: 380px;
     border-radius: 10px
+  }
+
+  
+  .posttext{
+    font-size: 15px;
+   
   }
 }
 
