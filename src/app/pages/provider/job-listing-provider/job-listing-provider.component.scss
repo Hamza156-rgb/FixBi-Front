@@ -1,71 +1,124 @@
 .form-select {
-    border-radius: 10px;
+  border-radius: 10px;
 }
-  #searchpostion {
-
-    margin-top: 0px !important;
-  }
-  input{
-    border-radius: 10px;
-  }
-  .has-search .form-control-feedback {
-    position: absolute;
-    z-index: 2;
-    display: block;
-    width: 2.375rem;
-    height: 2.375rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #aaa;
-    margin-top: 10px;
-
-  }
-  .has-search .form-control {
-    padding-left: 2.375rem;
-  }
-  #searchsubmit {
-
-    width: calc(103% - 10px);
-  }
-  .btn-primary {
-    color: #fff;
-    background-color: #2367bc;
-    border-color: #2367bc;
+#searchpostion {
+  margin-top: 0px !important;
+}
+input {
+  border-radius: 10px;
+}
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+  margin-top: 10px;
+}
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+#searchsubmit {
+  width: calc(103% - 10px);
+}
+.btn-primary {
+  color: #fff;
+  background-color: #2367bc;
+  border-color: #2367bc;
+  width: 100%;
 }
 #pdfoutline {
-    color: #2367BC !important
-  }
+  color: #2367bc !important;
+}
 
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
 #butcommonpageuser {
-    padding: 5px;
-    width: calc(50% - 10px);
-  }
-  .btn-primary {
-    color: #fff;
-    background-color: #2367bc;
-    border-color: #2367bc;
+  padding: 5px;
+  width: calc(50% - 10px);
+}
+.btn-primary {
+  color: #fff;
+  background-color: #2367bc;
+  border-color: #2367bc;
+
 }
 .btn-success {
-    color: #fff;
-    background-color: #5db846;
-    border-color: #5db846;
+  color: #fff;
+  background-color: #5db846;
+  border-color: #5db846;
+  width: 100%;
 }
 
-.form-check-label{
-    margin-left:3%;
+.form-check-label {
+  margin-left: 3%;
 }
 
 #cardsjoblisiting {
+  background-color: rgb(247, 247, 247);
+}
+// #scroll {
 
-    background-color: rgb(247, 247, 247);
-  }
-  #scroll {
+//   height: 80rem;
+//   overflow-y: scroll;
+//   overflow-x: hidden;
+// }
 
-    height: 80rem;
-    overflow-y: scroll;
-    overflow-x: hidden;
+@media only screen and (max-width: 600px) {
+  .pagi {
+    font-size: 10px;
   }
+  #commonbut{
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .pagi {
+    font-size: 12px;
+  }
+  #commonbut{
+    width: 70%;
+    font-size: 15px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .pagi {
+    font-size: 14px;
+  }
+  #commonbut{
+    width: 100%;
+    font-size: 10px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .pagi {
+    font-size: 16px;
+  }
+  #commonbut{
+    width: 100%;
+    font-size: 15px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .pagi {
+    font-size: 18px;
+  }
+  #commonbut{
+    width: 100%;
+    font-size: 17px;
+  }
+}

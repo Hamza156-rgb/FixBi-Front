@@ -21,28 +21,28 @@
                             </div>
                         </div>
                         <div class="row pt-3" *ngIf="user_type == 3 ">
-                                <div class="col-md-6 col-12 mt-2 ">
+                                <div class="col-md-6 col-lg-6 col-12 mt-2 ">
                                     <input type="text" class="form-control" placeholder="First Name"
                                         [(ngModel)]="formData.first_name">
                                 </div>
-                                <div class="col-md-6 col-12 mt-2 ">
+                                <div class="col-md-6 col-lg-6  col-12 mt-2 ">
                                     <input type="text" class="form-control" id="recipient-name"
                                         [(ngModel)]="formData.last_name">
                                 </div>
                         </div>
-                            <div class="row pt-3">
-                                <div class="col-xs-8 col-sm-6 mt-2 ">
+                            <div class="row pt-1">
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3 ">
                                     <input type="number" class="form-control" id="recipient-name"
                                         [(ngModel)]="formData.phone">
                                 </div>
 
-                                <div class="col-xs-8 col-sm-6 mt-2">
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">
                                     <input type="text" class="form-control" id="recipient-name"
                                         [(ngModel)]="formData.email">
                                 </div>
                             </div>
-                            <div class="row pt-3">
-                                <div class="col-xs-8 col-sm-6 mt-2 ">
+                            <div class="row pt-1">
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3 ">
                                     <ngx-select-dropdown [instanceId]="'instance1'"
                                     (change)="searchChange($event)" [multiple]="false"
                                      [(ngModel)]="formData.category"
@@ -50,7 +50,7 @@
                                     >
                                 </ngx-select-dropdown>
                                 </div>
-                                <div class="col-xs-8 pt-2 col-sm-6  ">
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3   ">
                                     <ngx-select-dropdown [instanceId]="'instance2'"
                                     (change)="searchChange1($event)" [multiple]="true"
                                    
@@ -59,9 +59,9 @@
                                 </div>
                             </div>
 
-                            <div class="row pt-3">
+                            <div class="row pt-1">
 
-                                <div class="col-xs-8 col-sm-6 mt-2 ">
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3 ">
                                     <ngx-select-dropdown [instanceId]="'instance3'"
                                     (change)="searchCountry($event)" [multiple]="false"
                                      [(ngModel)]="formData.country"
@@ -71,7 +71,7 @@
                                 </div>
 
 
-                                <div class="col-xs-8 col-sm-6 mt-2 ">
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3 ">
                                     <ngx-select-dropdown [instanceId]="'instance4'"
                                     (change)="searchcity($event)" [multiple]="true"
                                    [(ngModel)]="formData.city"
@@ -80,15 +80,15 @@
                                 </div>
 
                             </div>
-                            <div class="row pt-3">
-                                <div class="col-xs-8 col-sm-6 mt-2 ">
+                            <div class="row pt-1">
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3 ">
                                     <ngx-select-dropdown [instanceId]="'instance5'"
                                     [multiple]="true"
                                     [(ngModel)]="formData.region" [config]="config5"
                                     [options]="region">
                                 </ngx-select-dropdown>
                                 </div>
-                                <div class="col-xs-8 col-sm-6 mt-2">
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">
                                     <label for="files" class="btn">Add Portfolio</label>
                                     <input type="file" id="files" accept="application/pdf" value="file" (change)="addPdf($event)" />
                                     <strong [ngStyle]="{'display': (showbtn) ? 'none' : 'block'}"> <a id="pdf_link" class="btn btn-outline-success" target="_blank">
@@ -97,26 +97,27 @@
                                     
                                 </div>
                             </div>
-                            <div class="row pt-3">
-                                <div class="col-xs-8 col-sm-12 mt-2 ">
+                            <div class="row pt-1">
+                                <div class="col-12 mt-3 ">
                                     <textarea class="form-control" placeholder="Describe Your Skills"
                                         id="exampleFormControlTextarea1" rows="3"
                                         [(ngModel)]="formData.description"></textarea>
                                 </div>
                             </div>
                             <div class="row pt-3">
-                                <div class="col-xs-8 col-sm-6 mt-2 ">
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-2 ">
                                     <label>Opening Time</label>
                                     <input type="time" class="form-control" id="recipient-name"
                                         placeholder="Start time" [(ngModel)]="formData.openingTime">
 
                                 </div>
-                                <div class="col-xs-8 col-sm-6 mt-2 ">
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-2 ">
                                     <label>Closing Time</label>
                                     <input type="time" class="form-control" id="recipient-name" placeholder="End time" [(ngModel)]="formData.closingTime">
 
                                 </div>
                             </div>
+
                             <div class="row pt-3">
                                 <div class="form-group mb-3">
                                     <label>Enter address</label>

@@ -34,6 +34,7 @@
     "jquery": "^3.6.0",
     "mdb-angular-ui-kit": "^2.2.0",
     "ngx-owl-carousel-o": "^7.0.3",
+    "ngx-pagination": "^6.0.2",
     "ngx-select-dropdown": "^3.0.0",
     "ngx-slick-carousel": "^0.6.0",
     "ngx-spinner": "^14.0.0",

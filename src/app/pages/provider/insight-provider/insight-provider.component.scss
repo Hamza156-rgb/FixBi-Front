@@ -1,25 +1,72 @@
 #totaljobs {
     background-color: #5955c9;
     color: white;
-    font-size: 16px;
+    
 }
 #totalreview {
     background-color: #55c988;
     color: white;
-    font-size: 17px;
+
 }
-.col-md-4 {
-    flex: 0 0 auto;
-    width: 22.333333% !important;
+// .col-md-4 {
+//     flex: 0 0 auto;
+//     width: 22.333333% !important;
+// }
+
+@media only screen and (max-width: 600px) {
+    #totaljobs {
+        font-size: 9px;
+    }
+    #totalreview {
+        font-size: 10px;
+    }
 }
 
-@media screen and (max-width: 768px) {
-    .btn-lg,
-    .btn-group-lg > .btn {
-        width: 100% !important;
-        font-size: 15px;
-        padding: 0.5rem 0.5rem;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #totaljobs {
+        font-size: 9px;
+    }
+    #totalreview {
         font-size: 10px;
-        border-radius: 0.3rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #totaljobs {
+        font-size: 9px;
+    }
+    #totalreview {
+        font-size: 11px;
+    }
+    .card-text{
+        margin-left: 40px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #totaljobs {
+        font-size: 14px;
+    }
+    #totalreview {
+        font-size: 15px;
+    }
+    .card-text{
+        margin-left: 20px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    #totaljobs {
+        font-size: 15px;
+    }
+    #totalreview {
+        font-size: 16px;
+    }
+    .card-text{
+        margin-left: 22px;
     }
 }

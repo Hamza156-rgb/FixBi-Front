@@ -1,8 +1,45 @@
-li{
+li {
     list-style: none;
 }
-.btn-success{
+.btn-success {
     color: #fff;
     background-color: #5db846;
-    border-color: #5db846;;
+    border-color: #5db846;
+}
+
+@media only screen and (max-width: 600px) {
+    .btn-success {
+        width: 100%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .btn-success {
+        width: 70%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .btn-success {
+        
+        width: 100%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .btn-success {
+        float: right;
+        width: 50%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .btn-success {
+        float: right;
+        width: 50%;
+    }
 }

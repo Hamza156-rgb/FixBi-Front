@@ -6,9 +6,123 @@ li{
     background-color: #5db846;
     border-color: #5db846;;
 } 
-#scroll2 {
+// #scroll2 {
 
-    height: 40rem;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
+//     height: 40rem;
+//     overflow-y: scroll;
+//     overflow-x: hidden;
+//   }
+ 
+
+.time{
+  
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .btn{
+        width: 50%;
+        font-size: 12px;
+    }
+
+    .card-title{
+        font-size: 12px;
+    }
+    .card-text{
+        font-size: 12px;
+    }
+    strong{
+        font-size: 12px;
+    }
+    .time{
+        font-size: 12px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .btn{
+        width: 50%;
+        font-size: 12px;
+    }
+
+
+    .card-title{
+        font-size: 12px;
+    }
+    .card-text{
+        font-size: 10px;
+    }
+    strong{
+        font-size: 10px;
+    }
+    .time{
+        font-size: 10px;
+    }
+
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .btn{
+        width: 100%;
+        font-size: 10px;
+    }
+    .card-title{
+        font-size: 12px;
+    }
+    .card-text{
+        font-size: 10px;
+    }
+    strong{
+        font-size: 10px;
+    }
+    .time{
+        font-size: 12px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .btn{
+        width: 100%;
+        font-size: 14px;
+    }
+
+  
+    .card-title{
+        font-size: 16px;
+    }
+    .card-text{
+        font-size: 14px;
+    }
+    strong{
+        font-size: 14px;
+    }
+    .time{
+        font-size: 12px;
+    }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .btn{
+        width: 100%;
+        font-size: 14px;
+    }
+    .card-title{
+        font-size: 18px;
+    }
+    .card-text{
+        font-size: 16px;
+    }
+    strong{
+        font-size: 16px;
+    }
+    .time{
+        font-size: 14px;
+        text-align: center;
+    }
+}

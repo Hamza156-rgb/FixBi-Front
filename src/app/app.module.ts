@@ -59,6 +59,8 @@ import { MatListModule } from '@angular/material/list';
 import { SearchFilterPipe } from './search-filter.pipe';
 import { ViewJobProfileComponent } from './pages/provider/view-job-profile/view-job-profile.component';
 import { JobsAssignedComponent } from './pages/provider/jobs-assigned/jobs-assigned.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -121,6 +123,7 @@ import { JobsAssignedComponent } from './pages/provider/jobs-assigned/jobs-assig
     MatSnackBarModule,
     MatIconModule,
     MatListModule,
+    NgxPaginationModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule, AngularFirestoreModule,
     ScrollToModule.forRoot()

@@ -1,40 +1,53 @@
 <app-navbar></app-navbar>
-<div class="jumbotron pb-5">
-    <div class="container w-75 pt-5">
+<div class="jumbotron">
+    <div class="container w-75  pt-5">
         <div class="row">
-            <div class="col-xs-8 col-sm-3 mt-2">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-2">
                 <h3>Job Listing </h3>
             </div>
-        </div>
-        <!-- <form>
-            <div class="row">
-                <div class="col-xs-8 col-sm-3 mt-2">
-                    <h3>Job Listing </h3>
-                </div>
-                <div class="col-xs-8 col-sm-3 mt-2">
-                    <select class="form-select">
-                        <option>Sort By</option>
 
-                    </select>
-                </div>
-                <div class="col-xs-8 col-sm-3 mt-2">
-                    <select class="form-select">
-                        <option>Order By</option>
-                    </select>
-                </div>
-                <div class="col-xs-8 col-sm-3 mt-2">
-                    <select class="form-select">
-                        <option>Show Posts</option>
-                    </select>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div style="display: grid;
+                grid-auto-flow: column;
+                ">
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <select class="form-select mt-2">
+                                <option value="Anton">Sort By
+                                <option value="Mike">Mike
+                                <option value="Peter">Peter
+                                <option value="Bill">Bill
+                                <option value="Carl">Carl
+                            </select>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <select class="form-select mt-2">
+                                <option value="Anton">Order By
+                                <option value="Mike">Mike
+                                <option value="Peter">Peter
+                                <option value="Bill">Bill
+                                <option value="Carl">Carl
+                            </select>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <select class="form-select mt-2">
+                                <option value="Anton">Post By
+                                <option value="Mike">Mike
+                                <option value="Peter">Peter
+                                <option value="Bill">Bill
+                                <option value="Carl">Carl
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </form> -->
-
+        </div>
     </div>
-    <div class="container w-75 pt-5">
+    <div class="container w-75  pt-3">
         <form [formGroup]="registerForm" (ngSubmit)="searchFilter()">
             <div class="row">
-                <div class="col-xs-8 col-sm-4 mt-2">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 mt-2">
                     <div class="form-group has-search">
                         <span class=" form-control-feedback" id="searchpostion"> <img
                                 src="assets/img/search.png" /></span>
@@ -48,7 +61,7 @@
                         </div> -->
                     </div>
                 </div>
-                <div class="col-xs-8 col-sm-4 mt-2">
+                <div class="col-xs-12 col-sm-12 col-md-4  col-lg-4 mt-2">
                     <ngx-select-dropdown [instanceId]="'instance1'" (change)="searchChange($event)" [multiple]="false"
                         [(ngModel)]="SearchData.category" [config]="config1" [options]="categories" name="something"
                         [ngClass]="{ 'is-invalid': submitted && f.cat.errors }" formControlName="cat">
@@ -59,15 +72,15 @@
 
                     </div>
                 </div>
-                <div class="col-xs-8 col-sm-4 mt-2">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 mt-2">
                     <button type="submit" class="btn btn-primary" id="searchsubmit">Search</button>
                 </div>
             </div>
         </form>
     </div>
-    <div class="container w-75 justify-content-center pt-5">
-        <div class="row pt-5">
-            <div class="col-xs-8 col-sm-4 mt-4">
+    <div class="container w-75 justify-content-center mt-5">
+        <div class="row ">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 mt-4">
                 <div class="mb-3">
                     <div class="card" id="cardsjoblisiting">
                         <div class="card-body text-left">
@@ -75,7 +88,7 @@
                             <hr>
                             <div *ngFor="let type of jobTypes ; let i=index  " class="row mb-3">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" [value]="type.id" 
+                                    <input type="checkbox" class="form-check-input" [value]="type.id"
                                         (change)="onJobTypeChange($event)">
                                     {{type.name}}
                                 </label>
@@ -103,45 +116,51 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-8 col-sm-8 mt-2">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 mt-4">
                 <ul id="scroll">
-                    <li *ngFor="let job of searchResult ">
+                    <li *ngFor="let job of searchResult  | paginate
+                    : {
+                        itemsPerPage: itemsPerPage,
+                        currentPage: p,
+                        totalItems: totalItems
+                      }
+                    
+                      ">
                         <div class="row g-0">
-                            <div class="col-md-3 pt-4">
+                            <div class=" col-xs-12 col-sm-12  col-md-4 col-lg-3 pt-4">
                                 <img [src]="config.imgUrl + job.categories.category_icon"
                                     style="width:100px; height:100px" class="img-start" alt="...">
                             </div>
-                            <div class="col-md-9 align-self-center">
+                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 align-self-center">
                                 <div class="card-body text-left">
-
-
-                                    <strong>
-                                        {{job.job_title}}
-                                    </strong>
-                                    <br />
-                                    <small><strong>{{job.categories.name}} |
-                                            {{job.sub_categories.name}}</strong></small><br />
-                                    <small>{{job.countries.name}} | {{job.cities.name}} |
-                                        {{job.regions.name}}</small><br />
                                     <div class="row">
-                                        <div class="col">
+                                        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
+                                            <strong>
+                                                {{job.job_title}}
+                                            </strong>
+                                            <br />
+                                            <small><strong>{{job.categories.name}} |
+                                                    {{job.sub_categories.name}}</strong></small><br />
+                                            <small>{{job.countries.name}} | {{job.cities.name}} |
+                                                {{job.regions.name}}</small><br />
 
                                             <small>
                                                 <strong>Job Description:</strong><br />
                                                 {{job.requirements}}
                                             </small>
                                         </div>
-                                        <div class="col-xs-10 col-sm-12 col-md-8  mt-1 text-left" *ngIf="job.jobs_status == '1'   ">
+                                        <div class="col-xs-12 col-sm-12 col-md-6  mt-4 "
+                                            *ngIf="job.jobs_status == '1'   ">
                                             <small>
                                                 <small>
                                                     <button type="button" class="btn btn-success " id="commonbut"
-                                                        (click)="viewJob(job.id, job.posted_by)">View Job
+                                                        (click)="viewJob(job.id, job.posted_by)">View
                                                     </button> </small>
 
-                                                    <!-- <small>
-                                                        <button type="button" class="btn btn-success " id="commonbut"
-                                                            (click)="viewProfile( job.posted_by)" style="margin-left:5px;">View Profile
-                                                        </button> </small> -->
+                                                <small>
+                                                    <button type="button" class="btn btn-primary mt-2 " id="commonbut">
+                                                        <img src="assets/img/phone-call.png" /> Contact Us
+                                                    </button> </small>
                                             </small>
                                         </div>
                                     </div>
@@ -151,7 +170,13 @@
                         <hr>
                     </li>
                 </ul>
+                <div class="row mt-5">
+                    <pagination-controls screenReaderPaginationLabel="Pagination" class="pagi"
+                        (pageChange)="p = $event">
+                    </pagination-controls>
+                </div>
             </div>
+
         </div>
     </div>
 </div>

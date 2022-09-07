@@ -13,20 +13,27 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 
 export class JobListingUserComponent implements OnInit {
-
   registerForm!: FormGroup;
   submitted = false;
   searchResult: any = [];
   compareResult: any = [];
+  collection = [];
+  p: number = 1;
+  itemsPerPage = 4;
+  totalItems: any;
 
-  constructor(public config: ConfigService, public router: Router,
-    private formBuilder: FormBuilder, public shared: SharedDataService,
-  ) { }
+  constructor(public config: ConfigService,
+    public router: Router,
+    private formBuilder: FormBuilder,
+    public shared: SharedDataService,
+  ) {
+
+  }
   config1 = {
     displayKey: "name",
     search: true,
     placeholder: 'Category',
-    height:'300px'
+    height: '300px'
   };
 
   SearchData = {
@@ -139,26 +146,21 @@ export class JobListingUserComponent implements OnInit {
     },
   ]
   ngOnInit(): void {
-
-
-    // this.onJobTypeChange(event);
     this.registerForm = this.formBuilder.group({
       keyword: ['', [Validators.required]],
       cat: ['', [Validators.required]],
-
     },
       {
-
       });
 
     this.config.getHttp('auth/jobs/getAllJobs', '').then((data: any) => {
       this.searchResult = data.data;
       this.compareResult = data.data;
-      this.getCategory();
+      this.getCategory(this.p);
       // console.log(this.searchResult);
     })
   }
-  viewJob(job,profile) {
+  viewJob(job, profile) {
     let navigationExtras: NavigationExtras = {
       state: {
         job_id: job,
@@ -179,13 +181,14 @@ export class JobListingUserComponent implements OnInit {
     this.router.navigate(['view-job-profile'], navigationExtras);
   }
 
-
-
-  getCategory() {
-    this.config.getHttp('category/getAllCategories', '').then((data: any) => {
+  getCategory(p: any) {
+    this.config.getHttp(`category/getAllCategories?page=${1}&size=${this.itemsPerPage}`, '').then((data: any) => {
       this.categories = data.data;
+      this.p = 0;
+      this.totalItems = data.totalPassengers;
     })
   }
+
   onLangChange(event) {
     // console.log(event.target.value);
     if (event.target.checked) {
@@ -288,10 +291,7 @@ export class JobListingUserComponent implements OnInit {
 
   }
 
-
   get f() { return this.registerForm.controls; }
-
-
 
   searchFilter() {
     this.submitted = true;
@@ -314,7 +314,6 @@ export class JobListingUserComponent implements OnInit {
       })
     }
   }
-
 
   searchByJob() {
 

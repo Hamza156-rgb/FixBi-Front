@@ -70,6 +70,14 @@ export class HomeComponent implements OnInit {
     placeholder: 'Region',
   };
 
+  config7 = {
+    displayKey: "name",
+    search: true,
+    placeholder: 'Pharmacy',
+    height: '300px'
+
+  };
+
   dynamicSlides = [
     {
       'id': '1',
@@ -199,7 +207,7 @@ export class HomeComponent implements OnInit {
     this.getArticles();
     this.registerForm = this.formBuilder.group({
       category: ['', Validators.required],
-       keyword: [''],
+      keyword: [''],
       subCategory: ['', Validators.required],
       country: ['', Validators.required],
       city: ['', Validators.required],

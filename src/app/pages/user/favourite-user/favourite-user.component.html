@@ -2,10 +2,10 @@
 <div class="jumbotron pb-5">
     <div class="container w-100 justify-content-center ">
         <div class="row pt-3">
-            <div class="col-xs-8 col-sm-4 mt-4">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-5 mt-4">
                 <app-user-profile-card></app-user-profile-card>
             </div>
-            <div class="col-xs-8 col-sm-8 mt-4">
+            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 mt-4">
                 <div class="mb-3">
                     <h5> Favourites</h5>
                 </div>
@@ -22,10 +22,10 @@
                                 <ul id="scroll2">
                                     <li *ngFor="let result of searchResult" id="liborderleft">
                                         <div class="row">
-                                            <div class="col-xs-8 col-sm-6 mt-2">
+                                            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 mt-2">
                                                 <div class=" mb-3" id="mb-3width">
                                                     <div class="row g-0">
-                                                        <div class="col-md-4" (click)="viewProfile(result)">
+                                                        <div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4" (click)="viewProfile(result)">
                                                             <img style="width:100px; height:100px;"
                                                                 *ngIf="result.profile_picture"
                                                                 [src]="config.imgUrl + result.profile_picture"
@@ -35,7 +35,7 @@
                                                                 src="assets/img/download.png"
                                                                 class="img-fluid rounded-start" alt="...">
                                                         </div>
-                                                        <div class="col-md-8 p-3">
+                                                        <div class=" col-xs-12 col-sm-12  col-md-8 col-lg-8 ">
                                                             <div class="card-body">
                                                                 <h5 class="card-title" *ngIf="result.company_name">
                                                                     {{result.company_name}}</h5>
@@ -76,7 +76,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xs-8 col-sm-4 mt-6 align-self-center">
+                                            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 mt-6 align-self-center">
                                                 <ul id="menu-logged-out-1" class="menu">
                                                     <li
                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1420 text-left">
@@ -88,17 +88,19 @@
                                                             </a>
                                                         </button>
                                                     </li>
+                                                
                                                     <li
                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1420 pt-1 text-left">
-                                                       
+
                                                         <a href="{{'https://wa.me/'+ result.phone}}"
-                                                        style="color:white;text-decoration:none">
-                                                        <button class="btn btn-success" id="butcommonpageuser"
-                                                            type="button"> <img src="assets/img/whatsapp.png" /> Message
-                                                        </button>
+                                                            style="color:white;text-decoration:none">
+                                                            <button class="btn btn-success" id="butcommonpageuser"
+                                                                type="button"> <img src="assets/img/whatsapp.png" />
+                                                                Message
+                                                            </button>
                                                         </a>
                                                     </li>
-                                                    <li class="mt-5 text-left"
+                                                    <li class="mt-3 time"
                                                         *ngIf="result.opening_time && result.closing_time">
                                                         {{result.opening_time}} - {{result.closing_time}}
 
