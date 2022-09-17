@@ -147,7 +147,7 @@ export class JobListingUserComponent implements OnInit {
   ]
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-      keyword: ['', [Validators.required]],
+      // keyword: ['', [Validators.required]],
       cat: ['', [Validators.required]],
     },
       {

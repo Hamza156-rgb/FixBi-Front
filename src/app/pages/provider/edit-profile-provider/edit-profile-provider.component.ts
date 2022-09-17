@@ -60,6 +60,7 @@ export class EditProfileProviderComponent implements OnInit {
     displayKey: "name", // if objects array passed which key to be displayed defaults to description
     search: true,
     placeholder: 'City',
+    height: '300px'
   };
 
 
@@ -67,6 +68,7 @@ export class EditProfileProviderComponent implements OnInit {
     displayKey: "name", // if objects array passed which key to be displayed defaults to description
     search: true,
     placeholder: 'Region',
+    height: '300px'
   };
 
   categories = [];

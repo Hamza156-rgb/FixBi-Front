@@ -61,6 +61,7 @@ export class HomeComponent implements OnInit {
     displayKey: "name", // if objects array passed which key to be displayed defaults to description
     search: true,
     placeholder: 'City',
+    height: '300px'
   };
 
 
@@ -68,6 +69,7 @@ export class HomeComponent implements OnInit {
     displayKey: "name", // if objects array passed which key to be displayed defaults to description
     search: true,
     placeholder: 'Region',
+    height: '300px'
   };
 
   config7 = {
