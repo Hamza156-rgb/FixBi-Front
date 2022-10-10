@@ -109,7 +109,6 @@ async selectUser(user) {
     this.api.getChat(find.chatId).subscribe(m => {
       this.temp = m;
       // set the service values
-
       this.api.chat = this.temp[0];
       this.messages = this.api.chat.messages == undefined ? [] : this.api.chat.messages;
       this.messages.filter(x => x.is_seen === false && x.senderId != this.api.currentUser.uid)
