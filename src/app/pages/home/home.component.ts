@@ -182,7 +182,7 @@ export class HomeComponent implements OnInit {
     country: [],
     work_description: ''
   }
-  user_id = localStorage.getItem('user_id');
+  user_id = "";
   modalCategory: any;
   constructor(
     config1: NgbCarouselConfig,
@@ -207,6 +207,8 @@ export class HomeComponent implements OnInit {
     this.getNewProviders();
     this.getfeaturedProviders();
     this.getArticles();
+    this.user_id = localStorage.getItem('user_id');
+    console.log(this.user_id);
     this.registerForm = this.formBuilder.group({
       category: ['', Validators.required],
       keyword: [''],
@@ -229,7 +231,12 @@ export class HomeComponent implements OnInit {
     });
 
   }
+
+
+
+
   ngAfterContentChecked() {
+    this.user_id = localStorage.getItem('user_id');
     this.cdref.detectChanges();
   }
   openLogInModal() {
