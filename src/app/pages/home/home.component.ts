@@ -10,6 +10,8 @@ import { SharedDataService } from 'src/providers/shared-data/shared-data.service
 import { ApiService } from 'src/providers/api/api.service';
 import { HelperService } from 'src/providers/helper/helper.service';
 import { ChangeDetectorRef } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-home',
@@ -191,14 +193,15 @@ export class HomeComponent implements OnInit {
     public config: ConfigService,
     public router: Router,
     public shared: SharedDataService,
+    private toastr: ToastrService,
     public api: ApiService, private helper: HelperService, private cdref: ChangeDetectorRef
 
   ) {
     config1.interval = 7000;
     config1.keyboard = true;
     config1.pauseOnHover = true;
-    config1.showNavigationArrows = false;
-    config1.showNavigationIndicators = true;
+    config1.showNavigationArrows = true;
+    config1.showNavigationIndicators = false;
   }
   ngOnInit(): void {
     this.getCurrentUser();
@@ -481,14 +484,24 @@ export class HomeComponent implements OnInit {
     this.config.postHttp('search/getResults', this.getOffer).then((data: any) => {
       // console.log(data.data)
       if (data.data.length == 0) {
-        this.shared.toastDanger('No Providers Found Near You.');
+        // this.shared.toastDanger('No Providers Found Near You.');
+
+        this.toastr.error('No Providers Found Near You.', '', {
+          positionClass: 'toast-center-center'
+        });
+
+
+
         return;
       }
       else {
         for (var d = 0; d < data.data.length; d++) {
           this.selectUser(data.data[d], this.getOffer.work_description);
           if (d == data.data.length - 1) {
-            this.shared.toastSuccess('Providers Near you informed');
+            // this.shared.toastSuccess('Providers Near you informed');
+            this.toastr.success('Providers Near you informed', '', {
+              positionClass: 'toast-center-center'
+            });
             setTimeout(() => {
               this.api.conversations = [];
             }, 300);

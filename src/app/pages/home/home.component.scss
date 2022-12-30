@@ -1,29 +1,26 @@
-
 #carouselImage {
   width: 100%;
   height: auto;
 }
 
-
-
-.carousel-caption{
+.carousel-caption {
   top: 5rem;
   bottom: 0 !important;
 }
 #carouselHeading {
-  font-family:"Source Sans Pro";
+  font-family: "Source Sans Pro";
   font-weight: bold;
   font-size: 5vw;
   text-transform: capitalize;
 }
-.btn{
-  font-size:14px
+.btn {
+  font-size: 14px;
 }
-.fw-bold{
-  font-weight:bold;
+.fw-bold {
+  font-weight: bold;
   font-family: "Source Sans Pro";
 }
-.btn-primary{
+.btn-primary {
   background-color: #2367bc;
 }
 
@@ -59,7 +56,6 @@
   text-align: center;
   pointer-events: none;
   color: #aaa;
-
 }
 .align-self-center > a {
   color: #000000;
@@ -71,7 +67,6 @@
 }
 
 .form-control {
-
   border-radius: 10px;
   color: black;
 }
@@ -85,7 +80,7 @@
   padding: 5px;
   width: 100%;
   border-radius: 10px;
-  background-color: #5DB846;
+  background-color: #5db846;
   border: none;
   margin-top: 1%;
 }
@@ -104,7 +99,7 @@ button#search {
 }
 
 .log {
-  color: #2367BC;
+  color: #2367bc;
   font-weight: 600;
   text-decoration: auto;
 }
@@ -131,7 +126,7 @@ button#search {
   padding: 18px 18px;
   border-radius: 60px;
   font-size: 15px;
-  background-color: #DCDCDC;
+  background-color: #dcdcdc;
   border: unset;
 }
 #textleft {
@@ -146,13 +141,12 @@ button#search {
 }
 
 #Categories {
-
   border-radius: 10px;
 }
 
 #cards_landscape_wrap-2 .card:hover {
-  background: #2367BC;
-  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+  background: #2367bc;
+  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.5);
   /*box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);*/
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
@@ -163,7 +157,6 @@ button#search {
 }
 
 #cards_landscape_wrap-2 .card:hover #aherf {
-
   color: white;
 }
 
@@ -181,50 +174,41 @@ button#search {
 }
 
 #Cyprus {
-
   border-radius: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
 }
 
 #spanCyprus {
-
-  color: #2367BC;
+  color: #2367bc;
 }
 
 #Emergency2 {
-
   padding: 10px 0px 10px 0px;
   width: calc(30% - 10px);
   border-radius: 10px;
   background-color: #2367bc;
-  
 }
 
 #Emergency {
-
   padding-top: 8%;
   padding-bottom: 5%;
-
-
 }
 
 #Pharmacy {
-
   padding: 5px;
   width: calc(30% - 10px);
   border-radius: 10px;
-  background-color: #5DB846;
+  background-color: #5db846;
   border: none;
 }
 
 #Pharmacymodel {
-
   margin-top: 15%;
 }
 
 #searchprimarybtn1 {
   padding: 5px;
-  width:100%;
+  width: 100%;
   background-color: #2367bc;
 }
 
@@ -244,12 +228,11 @@ div#responsive {
 }
 
 #space {
-
   margin-bottom: -8% !important;
 }
 
-#space > button{
-padding-top: 20%;
+#space > button {
+  padding-top: 20%;
 }
 
 #testimonials-list .shadow-effect p {
@@ -283,8 +266,8 @@ padding-top: 20%;
 
 #testimonials-list .owl-item.active.center .item {
   opacity: 1;
-  -webkit-transform: scale3d(1.0, 1.0, 1);
-  transform: scale3d(1.0, 1.0, 1);
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
 }
 
 .owl-carousel .owl-item img {
@@ -327,25 +310,21 @@ padding-top: 20%;
 .carousel-indicators li {
   background-color: #ccc !important;
 }
-.carousel-indicators  {
+.carousel-indicators {
   background-color: #000 !important;
 }
 
-
-
-textarea{
-  color:black;
+textarea {
+  color: black;
 }
 // @media screen and (max-width:768px) {
-
 
 //   #carouselHeading {
 
 //     font-size: 20px;
 //     padding-bottom: 5px;
-  
-//   }
 
+//   }
 
 //   // h1 {
 
@@ -367,7 +346,6 @@ textarea{
 //     border-radius: 0.3rem;
 //   }
 
-
 //   .center {
 //     margin: auto;
 //     width: 100%;
@@ -375,44 +353,34 @@ textarea{
 //   }
 // }
 #Introducing {
-  background-color: #5DB846;
-
+  background-color: #5db846;
 }
 
 #Introducingcontainer {
-  background-color: #5DB846;
+  background-color: #5db846;
 
   padding-bottom: 6%;
 }
 #colorintr {
-
   color: white;
-
 }
 #ggggtest {
-
   margin-bottom: -10% !important;
 }
 #widthcards {
-
   max-width: 600px;
   border-radius: 10px;
-
 }
 #align {
-
   text-align: left;
 }
 #spanonline {
-
-  color: #5DB846;
+  color: #5db846;
 }
 #circle {
-
   padding: 18px 18px !important;
 }
 #Newprovidercolor {
-
   color: white;
 }
 #containerpadding {
@@ -421,10 +389,9 @@ textarea{
 #widtprovider {
   max-width: 430px;
   height: 400px;
-  border-radius: 10px
+  border-radius: 10px;
 }
 #aligncenter {
-
   text-align: center;
 }
 
@@ -446,169 +413,168 @@ li {
 .mt-4 {
   margin-top: 1.5rem !important;
 }
-.jumbotron{
+.jumbotron {
   overflow: hidden;
 }
 
-.card-title{
+.card-title {
   font-size: 16px;
   font-weight: 800;
 }
-.card-title1{
+.card-title1 {
   font-size: 20px;
-  font-weight:bold;
+  font-weight: bold;
 }
-.button{
-  width:100%
+.button {
+  width: 100%;
 }
 
-
-.posttext{
+.posttext {
   // font-size: 15px;
   font-family: "Open Sans";
 }
 
-
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  .carousel-caption{
+  .carousel-caption {
     top: 1.5rem;
     bottom: 0 !important;
   }
-  .card-title{
+  .card-title {
     font-size: 16px;
     font-weight: 800;
   }
   div#responsive {
     margin-top: 30rem !important;
   }
-  .card-title1{
+  .card-title1 {
     font-size: 18px;
-    font-weight:bold;
+    font-weight: bold;
   }
   #widtprovider {
     max-width: 370px;
     height: 350px;
-    border-radius: 10px
+    border-radius: 10px;
   }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-
-  .carousel-caption{
+  .carousel-caption {
     top: 2rem;
     bottom: 0 !important;
   }
-  .card-title{
+  .card-title {
     font-size: 13px;
     font-weight: 800;
   }
-  .button{
-    width:100%
+  .button {
+    width: 100%;
   }
   div#responsive {
     margin-top: 30rem !important;
   }
-  .card-title1{
+  .card-title1 {
     font-size: 18px;
-    font-weight:bold;
+    font-weight: bold;
   }
   #widtprovider {
     max-width: 370px;
     height: 350px;
-    border-radius: 10px
+    border-radius: 10px;
   }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .carousel-caption{
+  .carousel-caption {
     top: 2rem;
     bottom: 0 !important;
   }
-  .card-title{
+  .card-title {
     font-size: 12px;
     font-weight: 800;
   }
-  .button{
-    width:100%
+  .button {
+    width: 100%;
   }
   div#responsive {
     margin-top: 18rem !important;
   }
-  .card-title1{
+  .card-title1 {
     font-size: 20px;
-    font-weight:bold;
+    font-weight: bold;
   }
   #widtprovider {
     max-width: 430px;
     height: 400px;
-    border-radius: 10px
+    border-radius: 10px;
   }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  .carousel-caption{
+  .carousel-caption {
+    top: 2rem;
+    bottom: 0 !important;
+  }
+
+  .headline {
+    margin-top: -14%;
+  }
+
+  .carousel-caption {
     top: 3rem;
     bottom: 0 !important;
   }
-  .card-title{
+  .card-title {
     font-size: 13px;
     font-weight: 800;
   }
-  .button{
-    width:80%
+  .button {
+    width: 80%;
   }
   div#responsive {
-    margin-top: 15rem !important;
+    margin-top: 6rem !important;
   }
-  .card-title1{
+  .card-title1 {
     font-size: 20px;
-    font-weight:bold;
+    font-weight: bold;
   }
   #widtprovider {
     max-width: 430px;
     height: 400px;
-    border-radius: 10px
+    border-radius: 10px;
   }
-  .posttext{
+  .posttext {
     font-size: 13px;
-   
   }
-  
-  
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  .carousel-caption{
+  .carousel-caption {
     top: 5rem;
     bottom: 0 !important;
   }
-  .card-title{
+  .card-title {
     font-size: 16px;
     font-weight: 800;
   }
-  .button{
-    width:60%
+  .button {
+    width: 60%;
   }
-  .card-title1{
+  .card-title1 {
     font-size: 20px;
-    font-weight:bold;
+    font-weight: bold;
   }
   #widtprovider {
     max-width: 410px;
     height: 380px;
-    border-radius: 10px
+    border-radius: 10px;
   }
 
-  
-  .posttext{
+  .posttext {
     font-size: 15px;
-   
   }
 }
-

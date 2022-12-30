@@ -163,12 +163,12 @@
                                                 <div class="small-ratings">
                                                     <ng-template #t let-fill="fill">
                                                         <span class="star" [class.full]="fill === 100">
-                                                            <span class="half"
+                                                            <span class="half" style="color:#fbc634;"
                                                                 [style.width.%]="fill">&#9733;</span>&#9733;
                                                         </span>
                                                     </ng-template>
 
-                                                    <ngb-rating [(rate)]="result.reviews_rating" [starTemplate]="t"
+                                                    <ngb-rating  [(rate)]="result.reviews_rating" [starTemplate]="t"
                                                         [readonly]="true" [max]="5"></ngb-rating>
                                                 </div>
                                                 <!-- <p class="card-text" *ngIf="result.last_review.length > 0"> {{result.last_review[0].reviews_text}}
